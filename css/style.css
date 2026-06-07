@@ -10,6 +10,11 @@ body {
     margin-bottom: 0.75rem;
 }
 
+#mainPageTitle {
+    margin-bottom: 0.25rem;
+    margin-top: 0.95rem;
+}
+
 .subheader-text {
     font-size: 2.2rem;
     font-weight: bold;
@@ -17,28 +22,73 @@ body {
     margin-top: 0.75rem;
 }
 
-.carousel-item img {
-    height: 60vh;
+.swiper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 1rem auto;
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-top: 1rem;
+    margin-top: 0.4rem;
+}
+
+.swiper-slide {
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+
+    background: white;
+
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-5px);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 300px;
+
     object-fit: cover;
 }
 
-.carousel-item {
-    position: relative;
+.swiper-slide h2 {
+    padding: 1rem;
 }
 
-.overlay {
+.swiper::before,
+.swiper::after {
+    content: "";
+
     position: absolute;
     top: 0;
-    left: 0;
+    z-index: 9;
 
-    width: 100%;
+    width: 150px;
     height: 100%;
 
-    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
 }
 
-.carousel {
-    width: 80vw;
-    max-width: 1200px;
-    margin: 0 auto;
+.swiper::before {
+    left: 0;
+
+    background: linear-gradient(
+        to right,
+        white,
+        transparent
+    );
+}
+
+.swiper::after {
+    right: 0;
+
+    background: linear-gradient(
+        to left,
+        white,
+        transparent
+    );
 }
