@@ -1,22 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Study Helper</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
-<!-- Navbar will go here (will use Bootstrap library for simplicity) -->
+        <!-- Navbar will go here (will use Bootstrap library for simplicity) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
 
+                <a class="navbar-brand" href="#">
+                    Study Helper
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="physics.html">Physics</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="furtherreading.html">Further Reading</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
     </header>
-     <main>
+    <main>
 
         <section class="title">
-            <h1 class="header-text">Study Helper</h1>
-            <p>Learn NCEA Physics</p>
+            <h1 class="header-text">Learn NCEA Physics</h1>
+            
+            <div class="container">
+                <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+
+                            <img src="assets/images/placeholder-image.png" class="d-block w-100" alt="Physics">
+
+                            <div class="overlay"></div>
+
+                            <div class="carousel-caption">
+                                <h3>Diffraction</h3>
+                                <p>Learn with interactive resources.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="carousel-item active">
+
+                            <img src="assets/images/placeholder-image.png" class="d-block w-100" alt="Physics">
+
+                            <div class="overlay"></div>
+
+                            <div class="carousel-caption">
+                                <h3>Diffraction</h3>
+                                <p>Learn with interactive resources.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="carousel-item active">
+
+                            <img src="assets/images/placeholder-image.png" class="d-block w-100" alt="Physics">
+
+                            <div class="overlay"></div>
+
+                            <div class="carousel-caption">
+                                <h3>Diffraction</h3>
+                                <p>Learn with interactive resources.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                        data-bs-slide="prev">
+
+                        <span class="carousel-control-prev-icon"></span>
+
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                        data-bs-slide="next">
+
+                        <span class="carousel-control-next-icon"></span>
+
+                    </button>
+
+                </div>
+            </div>
         </section>
 
         <section class="content">
@@ -29,5 +135,9 @@
     <footer>
         <p>&copy; 2026 Lucas Cai</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 </body>
+
 </html>
