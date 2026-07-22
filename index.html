@@ -8,7 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     Study Helper
                 </a>
 
@@ -52,37 +52,51 @@
         </nav>
     </header>
     <main>
-
         <section class="title">
             <h1 class="header-text" id="mainPageTitle">Learn NCEA Physics</h1>
+
+            <!-- <p class="align-text-left">Everything you need to study effectively in one place. <br>
+
+                Ground your understanding with intuitive explanations and visual interactive diagrams.</p> -->
 
             <div class="swiper">
 
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                        <img src="assets/images/placeholder-image.png" alt="">
-                        <h2>Diffraction</h2>
+
+                        <a href="diffraction.html" class="slide-link">
+                            <img src="assets/images/placeholder-image.png" alt="Image of diffraction">
+                            <h2>Diffraction</h2>
+                        </a>
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="assets/images/placeholder-image.png" alt="">
-                        <h2>Interference</h2>
+                        <a href="physics.html" class="slide-link">
+                            <img src="assets/images/placeholder-image.png" alt="Image of interference">
+                            <h2>Interference</h2>
+                        </a>
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="assets/images/placeholder-image.png" alt="">
-                        <h2>Standing Waves</h2>
+                        <a href="physics.html" class="slide-link">
+                            <img src="assets/images/placeholder-image.png" alt="Image of standing waves">
+                            <h2>Standing Waves</h2>
+                        </a>
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="assets/images/placeholder-image.png" alt="">
-                        <h2>Beats</h2>
+                        <a href="physics.html" class="slide-link">
+                            <img src="assets/images/placeholder-image.png" alt="Image of beats">
+                            <h2>Beats</h2>
+                        </a>
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="assets/images/placeholder-image.png" alt="">
-                        <h2>Doppler Effect</h2>
+                        <a href="physics.html" class="slide-link">
+                            <img src="assets/images/placeholder-image.png" alt="Image of doppler effect">
+                            <h2>Doppler Effect</h2>
+                        </a>
                     </div>
 
 
@@ -90,6 +104,8 @@
 
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
+
+                <div class="swiper-pagination"></div>
 
             </div>
         </section>

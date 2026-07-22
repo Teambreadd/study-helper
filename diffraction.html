@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Study Helper</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <!-- Navbar will go here (will use Bootstrap library for simplicity) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+
+                <a class="navbar-brand" href="index.html">
+                    Study Helper
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="physics.html">Physics</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="furtherreading.html">Further Reading</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section class="title">
+            <h1 class="header-text align-text-left">Diffraction</h1>
+
+        </section>
+
+        <section class="content">
+            <h2 class="subheader-text align-text-left">What is Diffraction?</h2>
+
+            <section class="content-block">
+                <div class="text">
+                    <p class="align-text-left">
+                        Diffraction is the spreading of a wave as it passes through a gap or around an
+                        obstacle. The amount of diffraction depends on the relationship between the wavelength of the
+                        wave and
+                        the size of the gap. When the gap is much larger than the wavelength, the wave spreads out very
+                        little.
+                        However, when the gap is similar in size to or smaller than the wavelength, the wave spreads out
+                        significantly. Longer wavelengths diffract more than shorter wavelengths, which is why sound
+                        waves can
+                        often be heard around corners while light waves generally travel in straight lines.
+                        Understanding
+                        diffraction helps explain how waves behave when they encounter obstacles and openings in their
+                        path.
+                    </p>
+                </div>
+
+                <div class="image">     
+                    <img class="align-text-right" src="assets/images/placeholder-image.png" alt="placeholder">
+                </div>
+            </section>
+        </section>
+
+        <section class="content">
+            <h2 class="subheader-text align-text-left">Diagram</h2>
+            <div class="content-block">
+                <div id="diffractionDiagram" class="concept-diagram"></div>
+            </div>
+
+            <label for="slitWidthSlider">Slit Width</label>
+            <input type="range" id="slitWidthSlider" min="30" max="180" value="50">
+            <label for="wavelengthSlider">Wavelength</label>
+            <input type="range" id="wavelengthSlider" min="30" max="180" value="50">
+
+            <!-- Decided not to do wave speed slider as NCEA level 3 assumes wave speed is constant to show the relationship between wavelength and frequency -->
+            <!-- <label for="waveSpeedSlider">Wave Speed</label>
+            <input type="range" id="waveSpeedSlider" min="30" max="180" value="50"> -->
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+    <script src="js/diffraction.js"></script>
+</body>
+
+</html>

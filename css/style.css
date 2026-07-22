@@ -2,6 +2,15 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+a {
+    color: rgb(75, 126, 138);
+}
+
+.concept-list li {
+    font-size: 1rem;
+    margin: 0.15rem;
+}
+
 .header-text {
     font-size: 2.5rem;
     font-weight: bold;
@@ -20,6 +29,18 @@ body {
     font-weight: bold;
     text-align: center;
     margin-top: 0.75rem;
+}
+
+.align-text-left {
+    text-align: left;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+}
+
+.align-text-right {
+    text-align: right;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
 }
 
 .swiper {
@@ -91,4 +112,49 @@ body {
         white,
         transparent
     );
+}
+
+.slide-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.text {
+    flex: 1;
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 90%;
+    height: 20rem;
+    display: block;
+}
+
+.text p {
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.concept-diagram {
+    width: 80%;
+    height: 20rem;
+    background-color: rgb(206, 204, 204); 
+}
+
+#diffractionRectangleTop {
+    
+}
+
+#diffractionDiagram {
+    /* idk */
 }
