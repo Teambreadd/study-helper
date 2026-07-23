@@ -14,11 +14,11 @@
 <body>
     <header>
         <!-- Navbar will go here (will use Bootstrap library for simplicity) -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
 
                 <a class="navbar-brand" href="index.html">
-                    Study Helper
+                    NCEA Study Helper
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -85,24 +85,43 @@
 
         <section class="content">
             <h2 class="subheader-text align-text-left">Diagram</h2>
-            <div class="content-block">
-                <div id="diffractionDiagram" class="concept-diagram"></div>
+            <div class="content-block" id="diffractionDiagramMainContainer">
+                <div id="diffractionDiagramContainer">
+                    <div id="diffractionDiagram"></div>
+                </div>
+                <div id="diffractionDiagramControlsContainer">
+                    <div>
+                        <h3>Simulation Controls</h3>
+                        <div class="checkbox-container">
+                            <div class="two-element-separator">
+                                <label class="mb-0" for="slitWidthSlider">Slit Width</label>
+                                <p class="no-margin" id="slitWidthNumber">hi</p>
+                            </div>
+                            <input class="form-range" type="range" id="slitWidthSlider" min="30" max="220" value="70">
+                        </div>
+
+                        <div class="checkbox-container">
+                            <div class="two-element-separator">
+                                <label class="mb-0" for="wavelengthSlider">Wavelength</label>
+                                <p class="no-margin" id="wavelengthNumber">hi</p>
+                            </div>
+                            <input class="form-range" type="range" id="wavelengthSlider" min="30" max="220" value="70">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Display</h3>
+                        <label class="mb-0" for="showWaveletsCheckbox">Show Secondary Wavelets:</label>
+                        <input class="form-check-input" type="checkbox" id="showWaveletsCheckbox">
+
+                        <label class="mb-0" for="showWavefrontCheckbox">Show Diffracted Wavefront:</label>
+                        <input class="form-check-input" type="checkbox" id="showWavefrontCheckbox" checked>
+
+                        <label class="mb-0" for="pauseSimulationCheckbox">Pause Simulation:</label>
+                        <input class="form-check-input" type="checkbox" id="pauseSimulationCheckbox">
+                    </div>
+                </div>
             </div>
-
-            <label for="slitWidthSlider">Slit Width</label>
-            <input type="range" id="slitWidthSlider" min="30" max="180" value="50">
-
-            <label for="wavelengthSlider">Wavelength</label>
-            <input type="range" id="wavelengthSlider" min="30" max="180" value="50">
-
-            <label for="showWaveletsCheckbox">Show Secondary Wavelets</label>
-            <input type="checkbox" id="showWaveletsCheckbox">       
-            
-            <label for="showWavefrontCheckbox">Show Diffracted Wavefront</label>
-            <input type="checkbox" id="showWavefrontCheckbox" checked>
-
-            <label for="pauseSimulationCheckbox">Pause Simulation</label>
-            <input type="checkbox" id="pauseSimulationCheckbox">
 
             <!-- Decided not to do wave speed slider as NCEA level 3 assumes wave speed is constant to show the relationship between wavelength and frequency -->
             <!-- <label for="waveSpeedSlider">Wave Speed</label>

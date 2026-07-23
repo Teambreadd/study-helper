@@ -15,6 +15,12 @@ stage.add(objectLayer);
 // This references the HTML width slider input
 const widthSlider = document.getElementById("slitWidthSlider");
 
+// Gets the text element showing the current value of the width slider
+const widthNumber = document.getElementById("slitWidthNumber");
+
+// Initially updates it
+widthNumber.textContent = widthSlider.value + " px";
+
 // Gets the current gap (in pixels) from the slider's current value 
 const gap = Number(widthSlider.value);
 
@@ -79,6 +85,8 @@ widthSlider.addEventListener("input", () => {
     barrierBottom.height(topHeight);
 
     objectLayer.batchDraw();
+
+    widthNumber.textContent = widthSlider.value + " px";
 });
 
 // Wavefront functionality
@@ -107,7 +115,13 @@ const wavefronts = [];
 
 // This references the HTML wavelength and wave speed slider input
 const wavelengthSlider = document.getElementById("wavelengthSlider");
-const waveSpeedSlider = document.getElementById("waveSpeedSlider");
+// const waveSpeedSlider = document.getElementById("waveSpeedSlider");
+
+// This gets the text element that will display the value of the wavelength slider
+const wavelengthNumber = document.getElementById("wavelengthNumber");
+
+// Initially updates the value
+wavelengthNumber.textContent = wavelengthSlider.value + " px";
 
 // Show wavelets checkbox
 const showWaveletsCheckbox = document.getElementById("showWaveletsCheckbox");
@@ -158,6 +172,8 @@ let spacing = Number(wavelengthSlider.value);
 // Connects the wave speed and wavelength slider to the spacing and speed variables so it updates when changed by user
 wavelengthSlider.addEventListener("input", () => {
     spacing = Number(wavelengthSlider.value);
+
+    wavelengthNumber.textContent = wavelengthSlider.value + " px";
 });
 
 // Decided not to do wave speed slider as NCEA level 3 assumes wave speed is constant to show the relationship between wavelength and frequency
