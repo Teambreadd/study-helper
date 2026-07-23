@@ -109,6 +109,47 @@ const wavefronts = [];
 const wavelengthSlider = document.getElementById("wavelengthSlider");
 const waveSpeedSlider = document.getElementById("waveSpeedSlider");
 
+// Show wavelets checkbox
+const showWaveletsCheckbox = document.getElementById("showWaveletsCheckbox");
+
+// Show wavefront checkbox
+const showWavefrontCheckbox = document.getElementById("showWavefrontCheckbox");
+
+// Pause simulation checkbox
+const pauseSimulationCheckbox = document.getElementById("pauseSimulationCheckbox");
+
+// Function to toggle wavelet visibility
+function toggleWaveletVisibility(visible) {
+    for (const waveData of wavefronts) {
+        for (const wavelet of waveData.wavelets) {
+            wavelet.circle.visible(visible);
+        }
+    }
+}
+
+// Toggles diffracted wavefront visibility
+function toggleWavefrontVisibility(visible) {
+    for (const waveData of wavefronts) {
+        waveData.envelope.visible(visible);
+        waveData.topEnvelope.visible(visible);
+        waveData.bottomEnvelope.visible(visible);
+    }
+
+    waveLayer.batchDraw();
+    diffractionLayer.batchDraw();
+}
+
+// Hooks up show wavelet checkbox to the wavelet visibility function
+showWaveletsCheckbox.addEventListener("input", () => {
+   toggleWaveletVisibility(showWaveletsCheckbox.checked);
+});
+
+
+// Hooks up wavefront checkbox to the wavefront visibility function
+showWavefrontCheckbox.addEventListener("input", () => {
+   toggleWavefrontVisibility(showWavefrontCheckbox.checked);
+});
+
 // Wave settings, can be changed by user
 let speed = 100; // now constant
 let spawnTimer = 0;
@@ -233,11 +274,15 @@ function update(dt) {
 
                 diffractionLayer.add(circle);
 
+                // Ensures the wavelets update their visibility initially
+                circle.visible(showWaveletsCheckbox.checked);
+
                 wave.wavelets.push({
                     circle: circle
                 });
             }
-            wave.line.visible(false)
+
+            wave.line.visible(false);
 
         }
     }
@@ -378,11 +423,18 @@ function update(dt) {
 
         waveData.topEnvelope.points(topPoints);
         waveData.bottomEnvelope.points(bottomPoints);
+
+        // Ensures the envelopes spawn in with the correct visibility
+        waveData.topEnvelope.visible(showWavefrontCheckbox.checked)
+        waveData.bottomEnvelope.visible(showWavefrontCheckbox.checked)
+        waveData.envelope.visible(showWavefrontCheckbox.checked)
     }
 }
 
 // Animation event that runs every frame
 const animation = new Konva.Animation((frame) => {
+    if (pauseSimulationCheckbox.checked) return;
+    
     const dt = Math.min(frame.timeDiff / 1000, 0.05);
 
     update(dt);
