@@ -19,7 +19,7 @@ const widthSlider = document.getElementById("slitWidthSlider");
 const widthNumber = document.getElementById("slitWidthNumber");
 
 // Initially updates it
-widthNumber.textContent = widthSlider.value + " px";
+widthNumber.value = widthSlider.value;
 
 // Gets the current gap (in pixels) from the slider's current value 
 const gap = Number(widthSlider.value);
@@ -72,8 +72,7 @@ objectLayer.add(barrierBottom);
 
 // objectLayer.add(circle);
 
-// connects the width slider's change in input to the actual canvas gap
-widthSlider.addEventListener("input", () => {
+function updateSlitWidth() {
     const gap = Number(widthSlider.value);
 
     const topHeight = (stage.height() - gap) / 2;
@@ -86,7 +85,38 @@ widthSlider.addEventListener("input", () => {
 
     objectLayer.batchDraw();
 
-    widthNumber.textContent = widthSlider.value + " px";
+}
+
+// connects the width slider's change in input to the actual canvas gap
+widthSlider.addEventListener("input", () => {
+   updateSlitWidth()
+    widthNumber.value = widthSlider.value;
+});
+
+// Makes changing the slit width via the numeric input update the slider
+widthNumber.addEventListener("input", () => {
+    const value = Number(widthNumber.value);
+    // no need to check whether user has input invalid number e.g., outside of the range -1000, 22183089023 as the brower automatically clamps within the min and max of the slider value.
+    widthSlider.value = widthNumber.value
+    updateSlitWidth()
+});
+
+// Visually clamps the value that the user input to between the range of the slider after they lose focus (deselect) the numeric input
+widthNumber.addEventListener("blur", () => {
+    let value = Number(widthNumber.value);
+
+    if (Number.isNaN(value)) {
+        value = Number(widthSlider.value);
+    }
+
+    value = Math.max(
+        Number(widthSlider.min),
+        Math.min(Number(widthSlider.max), value)
+    );
+
+    widthNumber.value = value;
+    widthSlider.value = value;
+    updateSlitWidth();
 });
 
 // Wavefront functionality
@@ -121,7 +151,7 @@ const wavelengthSlider = document.getElementById("wavelengthSlider");
 const wavelengthNumber = document.getElementById("wavelengthNumber");
 
 // Initially updates the value
-wavelengthNumber.textContent = wavelengthSlider.value + " px";
+wavelengthNumber.value = wavelengthSlider.value;
 
 // Show wavelets checkbox
 const showWaveletsCheckbox = document.getElementById("showWaveletsCheckbox");
@@ -173,7 +203,33 @@ let spacing = Number(wavelengthSlider.value);
 wavelengthSlider.addEventListener("input", () => {
     spacing = Number(wavelengthSlider.value);
 
-    wavelengthNumber.textContent = wavelengthSlider.value + " px";
+    wavelengthNumber.value = wavelengthSlider.value;
+});
+
+wavelengthNumber.addEventListener("input", () => {
+    const value = Number(wavelengthNumber.value);
+    // no need to check whether user has input invalid number e.g., outside of the range -1000, 22183089023 as the brower automatically clamps within the min and max of the slider value.
+    wavelengthSlider.value = wavelengthNumber.value;
+    spacing = Number(wavelengthSlider.value);
+});
+
+// Visually clamps the value that the user input to between the range of the slider after they lose focus (deselect) the numeric input
+wavelengthNumber.addEventListener("blur", () => {
+    let value = Number(wavelengthNumber.value);
+
+    if (Number.isNaN(value)) {
+        value = Number(wavelengthSlider.value);
+    }
+
+    value = Math.max(
+        Number(wavelengthSlider.min),
+        Math.min(Number(wavelengthSlider.max), value)
+    );
+
+    wavelengthNumber.value = value;
+    wavelengthSlider.value = value;
+
+    spacing = Number(wavelengthSlider.value);
 });
 
 // Decided not to do wave speed slider as NCEA level 3 assumes wave speed is constant to show the relationship between wavelength and frequency

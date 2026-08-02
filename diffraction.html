@@ -78,7 +78,10 @@
                 </div>
 
                 <div class="image">
-                    <img class="align-text-right" src="assets/images/placeholder-image.png" alt="placeholder">
+                    <img class="align-text-right default-styled-image" src="assets/images/Diffraction-Ocean-Waves.png"
+                        alt="Ocean waves diffracting through a gap in the harbour wall">
+                    <p class="align-text-left image-info-text">Ocean waves diffracting through a gap in the harbour wall
+                    </p>
                 </div>
             </section>
         </section>
@@ -95,7 +98,10 @@
                         <div class="checkbox-container">
                             <div class="two-element-separator">
                                 <label class="mb-0" for="slitWidthSlider">Slit Width</label>
-                                <p class="no-margin" id="slitWidthNumber">hi</p>
+                                <div class="row-container">
+                                    <input type="number" id="slitWidthNumber" class="no-margin custom-numeric-input" min="1" max="200">
+                                    <p class="no-margin">px</p>
+                                </div>
                             </div>
                             <input class="form-range" type="range" id="slitWidthSlider" min="30" max="220" value="70">
                         </div>
@@ -103,7 +109,10 @@
                         <div class="checkbox-container">
                             <div class="two-element-separator">
                                 <label class="mb-0" for="wavelengthSlider">Wavelength</label>
-                                <p class="no-margin" id="wavelengthNumber">hi</p>
+                                <div class="row-container">
+                                    <input type="number" id="wavelengthNumber" class="no-margin custom-numeric-input" min="1" max="200">
+                                    <p class="no-margin">px</p>
+                                </div>
                             </div>
                             <input class="form-range" type="range" id="wavelengthSlider" min="30" max="220" value="70">
                         </div>

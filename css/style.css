@@ -127,12 +127,21 @@ a {
     gap: 1rem;
 }
 
+.row-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
 .text {
     flex: 1;
 }
 
 .image {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .image img {
@@ -171,10 +180,33 @@ a {
     border-color: #1f8fff;
 }
 
+.image-info-text {
+    color: #393939;
+    z-index: 2;
+}
+
+/* Hides the up down inputs for chrome, edge and safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hides it for firefox */
+input[type="number"] {
+    appearance: textfield;
+}
+
+.custom-numeric-input {
+    width: 4ch;
+    background-color: #C6C6C6;
+    text-align: right;
+    border: 0.1rem solid #8E8E8E;
+    border-radius: 0.25rem;
+}
+
 /* Diffraction page */
-
-
-#diffractionRectangleTop {}
+/* #diffractionRectangleTop {} */
 
 #diffractionDiagramMainContainer {
     display: flex;
@@ -223,3 +255,7 @@ a {
     justify-content: space-between;
 }
 
+.default-styled-image {
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
