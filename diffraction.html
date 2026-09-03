@@ -52,7 +52,7 @@
     <main>
 
         <section class="title">
-            <h1 class="header-text align-text-left">Diffraction</h1>
+            <h1 class="header-text align-text-left">Diffraction & Integration</h1>
 
         </section>
 
@@ -87,47 +87,57 @@
         </section>
 
         <section class="content">
-            <h2 class="subheader-text align-text-left">Diagram</h2>
+            <h2 class="subheader-text align-text-left">Diffraction Through a Slit</h2>
             <div class="content-block" id="diffractionDiagramMainContainer">
                 <div id="diffractionDiagramContainer">
-                    <div id="diffractionDiagram"></div>
+                    <div class="diagramCanvas" id="diffractionDiagram"></div>
                 </div>
                 <div id="diffractionDiagramControlsContainer">
                     <div>
                         <h3>Simulation Controls</h3>
-                        <div class="checkbox-container">
+                        <div class="slider-container">
                             <div class="two-element-separator">
-                                <label class="mb-0" for="slitWidthSlider">Slit Width</label>
+                                <label class="mb-0" for="diffractionSlitWidthSlider">Slit Width</label>
                                 <div class="row-container">
-                                    <input type="number" id="slitWidthNumber" class="no-margin custom-numeric-input" min="1" max="200">
+                                    <input type="number" id="diffractionSlitWidthNumber" class="no-margin custom-numeric-input"
+                                        min="1" max="200">
                                     <p class="no-margin">px</p>
                                 </div>
                             </div>
-                            <input class="form-range" type="range" id="slitWidthSlider" min="30" max="220" value="70">
+                            <input class="form-range" type="range" id="diffractionSlitWidthSlider" min="30" max="220" value="70">
                         </div>
 
-                        <div class="checkbox-container">
+                        <div class="slider-container">
                             <div class="two-element-separator">
-                                <label class="mb-0" for="wavelengthSlider">Wavelength</label>
+                                <label class="mb-0" for="diffractionWavelengthSlider">Wavelength</label>
                                 <div class="row-container">
-                                    <input type="number" id="wavelengthNumber" class="no-margin custom-numeric-input" min="1" max="200">
+                                    <input type="number" id="diffractionWavelengthNumber" class="no-margin custom-numeric-input"
+                                        min="1" max="200">
                                     <p class="no-margin">px</p>
                                 </div>
                             </div>
-                            <input class="form-range" type="range" id="wavelengthSlider" min="30" max="220" value="70">
+                            <input class="form-range" type="range" id="diffractionWavelengthSlider" min="30" max="220" value="70">
                         </div>
                     </div>
 
                     <div>
                         <h3>Display</h3>
-                        <label class="mb-0" for="showWaveletsCheckbox">Show Secondary Wavelets:</label>
-                        <input class="form-check-input" type="checkbox" id="showWaveletsCheckbox">
+                        <div class="list-container">
+                            <div>
+                                <label class="mb-0" for="showWaveletsCheckbox">Show Secondary Wavelets:</label>
+                                <input class="form-check-input" type="checkbox" id="showWaveletsCheckbox">
+                            </div>
 
-                        <label class="mb-0" for="showWavefrontCheckbox">Show Diffracted Wavefront:</label>
-                        <input class="form-check-input" type="checkbox" id="showWavefrontCheckbox" checked>
+                            <div>
+                                <label class="mb-0" for="showWavefrontCheckbox">Show Diffracted Wavefront:</label>
+                                <input class="form-check-input" type="checkbox" id="showWavefrontCheckbox" checked>
+                            </div>
 
-                        <label class="mb-0" for="pauseSimulationCheckbox">Pause Simulation:</label>
-                        <input class="form-check-input" type="checkbox" id="pauseSimulationCheckbox">
+                            <div>
+                                <label class="mb-0" for="pauseDiffractionSimulationCheckbox">Pause Simulation:</label>
+                                <input class="form-check-input" type="checkbox" id="pauseDiffractionSimulationCheckbox">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,50 +146,153 @@
             <!-- <label for="waveSpeedSlider">Wave Speed</label>
             <input type="range" id="waveSpeedSlider" min="30" max="180" value="50"> -->
 
-            <p>Diffraction is greatest when the slit width is approximately equal to the wavelength. As the slit becomes
-                even narrower, the wavefront continues to spread out, but the transmitted wave becomes much weaker
-                because less energy passes through the slit. This simulation shows the shape of the wavefront only, so
-                the reduction in wave intensity is not represented (diffraction appears to increase).</p>
-            <p>Notes
+            <h3 class="sub-subheader-text align-text-left">About this Simulation</h2>
+
+                <div class="text">
+                    <p class="align-text-left">
+                        Diffraction is greatest when the slit width is approximately equal to the wavelength. As the
+                        slit becomes
+                        even narrower, the wavefront continues to spread out, but the transmitted wave becomes much
+                        weaker
+                        because less energy passes through the slit. This simulation shows the shape of the
+                        wavefront only, so
+                        the reduction in wave intensity is not represented (diffraction appears to increase).
+                    </p>
+                </div>
+
+                <h3 class="sub-subheader-text align-text-left">Secondary Wavelets (Huygens' Principle)</h3>
+
+                <div class="text">
+                    <p class="align-text-left">Every point on a wavefront acts as a source of a new circular wavelet.
+                        The new wavefront is formed by
+                        the outer edge (envelope) of these secondary wavelets. When the wave passes through a slit, the
+                        wavelets spread out in all directions, producing the curved diffracted wavefront.</p>
+                </div>
+
+                <div class="content-block add-margin">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Changing Wavelength</th>
+                                <th>Changing Slit Width</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Increasing the wavelength (slit width constant)
+                                    The wavelength becomes larger relative to the slit width.
+                                    Diffraction increases, causing the transmitted wave energy to spread over a wider
+                                    range
+                                    of
+                                    angles.
+                                    The total energy passing through the slit remains approximately the same, but it is
+                                    distributed over a
+                                    larger area.
+                                    In this simulation: The spacing between successive wavefronts increases, while the
+                                    overall
+                                    wavefront
+                                    shape changes very little because interference is not modelled.</td>
+
+                                <td>Increasing the slit width (wavelength constant)
+                                    The slit becomes larger relative to the wavelength.
+                                    Diffraction decreases, so more of the transmitted wave energy continues straight
+                                    ahead.
+                                    Because the opening is larger, more of the incident wave energy passes through the
+                                    slit.
+                                    In this simulation: The outgoing wavefront becomes flatter, approaching the shape of
+                                    the
+                                    original plane
+                                    wave.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Decreasing the slit width (wavelength constant)
+                                    The slit becomes smaller relative to the wavelength.
+                                    Diffraction increases, causing the transmitted wave energy to spread over a wider
+                                    range
+                                    of
+                                    angles.
+                                    Because the opening is smaller, less of the incident wave energy passes through the
+                                    slit.
+                                    In this simulation: The outgoing wavefront becomes noticeably more curved,
+                                    demonstrating
+                                    Huygens'
+                                    Principle.</td>
+
+                                <td>Decreasing the wavelength (slit width constant)
+                                    The wavelength becomes smaller relative to the slit width.
+                                    Diffraction decreases, so more of the transmitted wave energy remains concentrated
+                                    in
+                                    the
+                                    forward
+                                    direction.
+                                    The total energy passing through the slit remains approximately the same.
+                                    In this simulation: The spacing between successive wavefronts decreases, while the
+                                    overall
+                                    wavefront
+                                    shape changes very little.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <br>
-                Increasing the wavelength (slit width constant)
-                The wavelength becomes larger relative to the slit width.
-                Diffraction increases, causing the transmitted wave energy to spread over a wider range of angles.
-                The total energy passing through the slit remains approximately the same, but it is distributed over a
-                larger area.
-                In this simulation: The spacing between successive wavefronts increases, while the overall wavefront
-                shape changes very little because interference is not modelled.
-                <br>
-                <br>
-                Decreasing the wavelength (slit width constant)
-                The wavelength becomes smaller relative to the slit width.
-                Diffraction decreases, so more of the transmitted wave energy remains concentrated in the forward
-                direction.
-                The total energy passing through the slit remains approximately the same.
-                In this simulation: The spacing between successive wavefronts decreases, while the overall wavefront
-                shape changes very little.
-                <br>
-                <br>
-                Decreasing the slit width (wavelength constant)
-                The slit becomes smaller relative to the wavelength.
-                Diffraction increases, causing the transmitted wave energy to spread over a wider range of angles.
-                Because the opening is smaller, less of the incident wave energy passes through the slit.
-                In this simulation: The outgoing wavefront becomes noticeably more curved, demonstrating Huygens'
-                Principle.
-                <br>
-                <br>
-                Increasing the slit width (wavelength constant)
-                The slit becomes larger relative to the wavelength.
-                Diffraction decreases, so more of the transmitted wave energy continues straight ahead.
-                Because the opening is larger, more of the incident wave energy passes through the slit.
-                In this simulation: The outgoing wavefront becomes flatter, approaching the shape of the original plane
-                wave.
-            </p>
-            <p><b>Simulation note:</b> This simulation only shows the geometric aspect of diffraction (where the
-                wavefronts can propagate) and not the intensity distribution (the amount of energy that reaches each
-                direction) as it does not take into account interference or intensity. Therefore, although changing the
-                wavelength does not have a noticable change on the shape of the wavefront, it affects the energy
-                distributed in each direction and therefore still affects the strength of diffraction.</p>
+
+                <p class="align-text-left"><b>Simulation note:</b> This simulation only shows the geometric aspect of
+                    diffraction (where the
+                    wavefronts can propagate) and not the intensity distribution (the amount of energy that reaches each
+                    direction) as it does not take into account interference or intensity. Therefore, although changing
+                    the
+                    wavelength does not have a noticable change on the shape of the wavefront, it affects the energy
+                    distributed in each direction and therefore still affects the strength of diffraction.</p>
+        </section>
+
+        <section>
+            <h2 class="subheader-text align-text-left">Interference Diagram</h2>
+            <div class="content-block" id="diffractionDiagramMainContainer">
+                <div id="diffractionDiagramContainer">
+                    <div class="diagramCanvas" id="interferenceDiagram"></div>
+                </div>
+                <div id="diffractionDiagramControlsContainer">
+                    <div>
+                        <h3>Simulation Controls</h3>
+                        <div class="slider-container">
+                            <div class="two-element-separator">
+                                <label class="mb-0" for="interferenceWavelengthSlider">Wavelength</label>
+                                <div class="row-container">
+                                    <input type="number" id="interferenceWavelengthNumber" class="no-margin custom-numeric-input"
+                                        min="1" max="200">
+                                    <p class="no-margin">px</p>
+                                </div>
+                            </div>
+                            <input class="form-range" type="range" id="interferenceWavelengthSlider" min="30" max="220" value="70">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Display</h3>
+                        <div class="list-container">
+                            <div>
+                                <label class="mb-0" for="showInterferencePeaks">Show Peaks:</label>
+                                <input class="form-check-input" type="checkbox" id="showInterferencePeaks" checked>
+                            </div>
+
+                            <div>
+                                <label class="mb-0" for="showInterferenceTroughs">Show Troughs:</label>
+                                <input class="form-check-input" type="checkbox" id="showInterferenceTroughs" checked>
+                            </div>
+
+                            <div>
+                                <label class="mb-0" for="pauseInterferenceSimulationCheckbox">Pause Simulation:</label>
+                                <input class="form-check-input" type="checkbox"
+                                    id="pauseInterferenceSimulationCheckbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="align-text-left image-info-text">NOTE: This simulation simplifies the diffraction to a point source to reduce lag and complexity while still preserving the correct relationships.</p>
         </section>
 
     </main>
@@ -187,7 +300,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
     <script src="https://unpkg.com/konva@9/konva.min.js"></script>
-    <script src="js/diffraction.js"></script>
+    <script type="module" src="js/diffraction.js"></script>
+    <script type="module" src="js/interference.js"></script>
 </body>
 
 </html>

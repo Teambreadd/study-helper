@@ -13,10 +13,10 @@ const objectLayer = new Konva.Layer();
 stage.add(objectLayer);
 
 // This references the HTML width slider input
-const widthSlider = document.getElementById("slitWidthSlider");
+const widthSlider = document.getElementById("diffractionSlitWidthSlider");
 
 // Gets the text element showing the current value of the width slider
-const widthNumber = document.getElementById("slitWidthNumber");
+const widthNumber = document.getElementById("diffractionSlitWidthNumber");
 
 // Initially updates it
 widthNumber.value = widthSlider.value;
@@ -144,11 +144,11 @@ waveLayer.moveToBottom();
 const wavefronts = [];
 
 // This references the HTML wavelength and wave speed slider input
-const wavelengthSlider = document.getElementById("wavelengthSlider");
+const wavelengthSlider = document.getElementById("diffractionWavelengthSlider");
 // const waveSpeedSlider = document.getElementById("waveSpeedSlider");
 
 // This gets the text element that will display the value of the wavelength slider
-const wavelengthNumber = document.getElementById("wavelengthNumber");
+const wavelengthNumber = document.getElementById("diffractionWavelengthNumber");
 
 // Initially updates the value
 wavelengthNumber.value = wavelengthSlider.value;
@@ -160,7 +160,7 @@ const showWaveletsCheckbox = document.getElementById("showWaveletsCheckbox");
 const showWavefrontCheckbox = document.getElementById("showWavefrontCheckbox");
 
 // Pause simulation checkbox
-const pauseSimulationCheckbox = document.getElementById("pauseSimulationCheckbox");
+const pauseDiffractionSimulationCheckbox = document.getElementById("pauseDiffractionSimulationCheckbox");
 
 // Function to toggle wavelet visibility
 function toggleWaveletVisibility(visible) {
@@ -505,7 +505,7 @@ function update(dt) {
 
 // Animation event that runs every frame
 const animation = new Konva.Animation((frame) => {
-    if (pauseSimulationCheckbox.checked) return;
+    if (pauseDiffractionSimulationCheckbox.checked) return;
     
     const dt = Math.min(frame.timeDiff / 1000, 0.05);
 
