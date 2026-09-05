@@ -99,24 +99,26 @@
                             <div class="two-element-separator">
                                 <label class="mb-0" for="diffractionSlitWidthSlider">Slit Width</label>
                                 <div class="row-container">
-                                    <input type="number" id="diffractionSlitWidthNumber" class="no-margin custom-numeric-input"
-                                        min="1" max="200">
+                                    <input type="number" id="diffractionSlitWidthNumber"
+                                        class="no-margin custom-numeric-input" min="1" max="200">
                                     <p class="no-margin">px</p>
                                 </div>
                             </div>
-                            <input class="form-range" type="range" id="diffractionSlitWidthSlider" min="30" max="220" value="70">
+                            <input class="form-range" type="range" id="diffractionSlitWidthSlider" min="30" max="220"
+                                value="70">
                         </div>
 
                         <div class="slider-container">
                             <div class="two-element-separator">
                                 <label class="mb-0" for="diffractionWavelengthSlider">Wavelength</label>
                                 <div class="row-container">
-                                    <input type="number" id="diffractionWavelengthNumber" class="no-margin custom-numeric-input"
-                                        min="1" max="200">
+                                    <input type="number" id="diffractionWavelengthNumber"
+                                        class="no-margin custom-numeric-input" min="1" max="200">
                                     <p class="no-margin">px</p>
                                 </div>
                             </div>
-                            <input class="form-range" type="range" id="diffractionWavelengthSlider" min="30" max="220" value="70">
+                            <input class="form-range" type="range" id="diffractionWavelengthSlider" min="30" max="220"
+                                value="70">
                         </div>
                     </div>
 
@@ -261,12 +263,13 @@
                             <div class="two-element-separator">
                                 <label class="mb-0" for="interferenceWavelengthSlider">Wavelength</label>
                                 <div class="row-container">
-                                    <input type="number" id="interferenceWavelengthNumber" class="no-margin custom-numeric-input"
-                                        min="1" max="200">
+                                    <input type="number" id="interferenceWavelengthNumber"
+                                        class="no-margin custom-numeric-input" min="1" max="200">
                                     <p class="no-margin">px</p>
                                 </div>
                             </div>
-                            <input class="form-range" type="range" id="interferenceWavelengthSlider" min="30" max="220" value="70">
+                            <input class="form-range" type="range" id="interferenceWavelengthSlider" min="30" max="220"
+                                value="70">
                         </div>
                     </div>
 
@@ -292,14 +295,175 @@
                     </div>
                 </div>
             </div>
-            <p class="align-text-left image-info-text">NOTE: This simulation simplifies the diffraction to a point source to reduce lag and complexity while still preserving the correct relationships.</p>
+            <p class="align-text-left image-info-text">NOTE: This simulation simplifies the diffraction to a point
+                source to reduce lag and complexity while still preserving the correct relationships.</p>
+
+            <div class="diagramExplanation">
+                <h3 class="align-text-left">Understanding Two-Source Interference</h3>
+
+                <h4 class="align-text-left">What is interference?</h4>
+                <p class="align-text-left">
+                    Interference occurs when two or more waves overlap. While the waves overlap, their
+                    individual displacements combine according to the <strong>principle of superposition</strong>.
+                    This means that the resultant displacement at any point is the sum of the displacements
+                    produced by the individual waves at that point. After overlapping, the waves continue
+                    travelling; they do not permanently change or destroy one another.
+                </p>
+
+                <h4 class="align-text-left">Constructive and destructive interference</h4>
+                <p class="align-text-left">
+                    If two waves arrive <strong>in phase</strong>, their peaks meet peaks and their troughs meet
+                    troughs. Their displacements add to produce a wave with a larger amplitude. This is called
+                    <strong>constructive interference</strong>. Positions where constructive interference
+                    continually occurs form <strong>antinodal lines</strong>.
+                </p>
+
+                <p class="align-text-left">
+                    If two waves arrive <strong>out of phase</strong>, a peak from one wave meets a trough from
+                    the other. Their opposite displacements cancel, producing zero or minimum amplitude. This
+                    is called <strong>destructive interference</strong>. Positions where destructive
+                    interference continually occurs form <strong>nodal lines</strong>.
+                </p>
+
+                <h4 class="align-text-left">Why do lines of interference form?</h4>
+                <p class="align-text-left">
+                    The two sources in this diagram are coherent: they produce waves with the same frequency
+                    and a constant phase difference. A point in the diagram is usually a different distance
+                    from each source, so the two waves may travel different distances to reach it. This
+                    difference is called the <strong>path difference</strong>:
+                </p>
+
+                <h5 class="equation">\[\text{path difference}=|r_2-r_1|\]</h5>
+
+                <p class="align-text-left">
+                    Here, \(r_1\) and \(r_2\) are the distances travelled from the two sources. Because the
+                    sources are in phase, a whole-wavelength path difference makes the waves arrive in phase:
+                </p>
+
+                <h5 class="equation">\[\text{constructive interference:}\quad |r_2-r_1|=n\lambda\]</h5>
+
+                <p class="align-text-left">
+                    In this equation, \(\lambda\) is the wavelength and \(n=0,1,2,3,\ldots\) is the whole-number
+                    order. For example, a path difference of \(2\lambda\) means one wave has travelled two
+                    complete wavelengths farther than the other. The waves are therefore still in phase when
+                    they meet.
+                </p>
+
+                <p class="align-text-left">
+                    An odd number of half-wavelengths makes the waves arrive in antiphase:
+                </p>
+
+                <h5 class="equation">
+                    \[\text{destructive interference:}\quad |r_2-r_1|=\left(n+\frac{1}{2}\right)\lambda\]
+                </h5>
+
+                <p class="align-text-left">
+                    This produces path differences of \(0.5\lambda, 1.5\lambda, 2.5\lambda,\ldots\). Every point
+                    with the same required path difference belongs to the same nodal or antinodal line, which
+                    is why an interference pattern forms across the diagram rather than at only one point.
+                </p>
+
+                <h4 class="align-text-left">Young's interference equation</h4>
+                <p class="align-text-left">
+                    When the observation point is far from two sources separated by a distance \(d\), the path
+                    difference can be written as \(d\sin(\theta)\). Equating this geometric path difference to
+                    the constructive-interference condition gives Young's equation:
+                </p>
+
+                <h5 class="equation">\[n\lambda=d\sin(\theta)\]</h5>
+
+                <p class="align-text-left">In this equation:</p>
+                <ul class="align-text-left">
+                    <li>\(n\) is the order of the antinodal line: \(0,1,2,3,\ldots\);</li>
+                    <li>\(\lambda\) is the wavelength;</li>
+                    <li>\(d\) is the separation of the two sources; and</li>
+                    <li>\(\theta\) is the angle between the central axis and the chosen antinodal line.</li>
+                </ul>
+
+                <p class="align-text-left">
+                    The central antinodal line has \(n=0\). Points on it are equally distant from both sources,
+                    so their path difference is zero. The first antinodal lines on either side have \(n=1\),
+                    the next pair have \(n=2\), and so on. Nodal directions can similarly be found using:
+                </p>
+
+                <h5 class="equation">
+                    \[\left(n+\frac{1}{2}\right)\lambda=d\sin(\theta)\]
+                </h5>
+
+                <h4 class="align-text-left">How this relates to a screen</h4>
+                <p class="align-text-left">
+                    Young's equation determines the <strong>angle</strong> of each antinodal line. If a screen
+                    were placed a perpendicular distance \(L\) from the sources, right-triangle geometry would
+                    determine where that line reaches the screen:
+                </p>
+
+                <h5 class="equation">\[\tan(\theta)=\frac{x}{L}\]</h5>
+
+                <p class="align-text-left">
+                    Here, \(x\) is the distance from the central maximum to the selected maximum on the screen.
+                    This equation is not itself Young's interference equation; it is a geometric equation used
+                    alongside it. For small angles, \(\sin(\theta)\approx\tan(\theta)\), so the two equations can
+                    be combined:
+                </p>
+
+                <h5 class="equation">\[x\approx\frac{n\lambda L}{d}\]</h5>
+
+                <p class="align-text-left">
+                    Therefore, for a fixed order \(n\), source separation \(d\), and screen distance \(L\), the
+                    displacement \(x\) is approximately directly proportional to wavelength. The spacing
+                    between neighbouring bright fringes is consequently:
+                </p>
+
+                <h5 class="equation">\[\Delta x\approx\frac{\lambda L}{d}\]</h5>
+
+                <h4 class="align-text-left">What the interactive diagram demonstrates</h4>
+                <p class="align-text-left">
+                    The semicircular wavefronts represent waves spreading from the two sources. The peak and
+                    trough controls allow the matching and cancellation of the waves to be observed. The
+                    overlaid antinodal lines join positions where the path difference is a whole number of
+                    wavelengths, while the nodal lines join positions where it is an odd number of half-
+                    wavelengths.
+                </p>
+
+                <p class="align-text-left">
+                    Moving the wavelength slider changes \(\lambda\) while the source separation \(d\) remains
+                    constant. From \(n\lambda=d\sin(\theta)\), increasing the wavelength increases the angle
+                    \(\theta\) of each non-central order. The interference lines therefore spread farther apart
+                    and some may move beyond the visible diagram. If a screen were present, the maxima would
+                    appear farther from the centre and the fringe spacing would be greater. Decreasing the
+                    wavelength produces the opposite effect.
+                </p>
+
+                <p class="align-text-left">
+                    At larger angles, wavelength and screen displacement still increase together, but they are
+                    not exactly directly proportional because \(\sin(\theta)\) and \(\tan(\theta)\) change at
+                    different rates. The direct-proportion equation for \(x\) is an approximation that is most
+                    accurate when the screen is far away and the angles are small.
+                </p>
+
+                <p class="align-text-left">
+                    <strong>Simulation note:</strong> The diagram models each slit as a point source and does not
+                    display a physical screen or the intensity of the fringes. It demonstrates the positions
+                    and spacing of the nodal and antinodal lines rather than the brightness distribution of a
+                    real two-slit experiment.
+                </p>
+            </div>
+
         </section>
 
     </main>
 
+    <!-- Importing mathjax to help me write equations easier -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Bootstrap library for some cool CSS stuff -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
+
+    <!-- Konva library to help simplify the development of the interactive diagrams -->
     <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+
+    <!-- References to the JS scripts -->
     <script type="module" src="js/diffraction.js"></script>
     <script type="module" src="js/interference.js"></script>
 </body>
