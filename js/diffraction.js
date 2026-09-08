@@ -518,5 +518,3 @@ animation.start();
 // Draw up everything (make everything appear on canvas)
 objectLayer.draw();
 waveLayer.draw();
-
-

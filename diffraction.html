@@ -52,35 +52,32 @@
     <main>
 
         <section class="title">
-            <h1 class="header-text align-text-left">Diffraction & Integration</h1>
-
+            <h1 class="header-text center-text diffraction-page-titles">Diffraction</h1>
         </section>
 
         <section class="content">
-            <h2 class="subheader-text align-text-left">What is Diffraction?</h2>
 
-            <section class="content-block">
+            <section class="two-column-layout">
                 <div class="text">
-                    <p class="align-text-left">
-                        Diffraction is the spreading of a wave as it passes through a gap or around an
-                        obstacle. The amount of diffraction depends on the relationship between the wavelength of the
-                        wave and
-                        the size of the gap. When the gap is much larger than the wavelength, the wave spreads out very
-                        little.
-                        However, when the gap is similar in size to or smaller than the wavelength, the wave spreads out
-                        significantly. Longer wavelengths diffract more than shorter wavelengths, which is why sound
-                        waves can
-                        often be heard around corners while light waves generally travel in straight lines.
-                        Understanding
-                        diffraction helps explain how waves behave when they encounter obstacles and openings in their
-                        path.
-                    </p>
+                    <div class="text-inner">
+                        <h2 class="content-left">What is Diffraction?</h2>
+                        <p class="content-left">
+                            Diffraction is the spreading of a wave as it passes through a gap or around an obstacle. It
+                            is
+                            strongest when the wavelength is similar to or larger than the gap. Longer wavelengths
+                            therefore
+                            diffract more, which is why sound can be heard around corners while light generally travels
+                            in
+                            straight lines.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="image">
-                    <img class="align-text-right default-styled-image" src="assets/images/Diffraction-Ocean-Waves.png"
+                <div class="image content-right">
+                    <img class="default-styled-image" src="assets/images/diffraction-ocean-waves.png"
                         alt="Ocean waves diffracting through a gap in the harbour wall">
-                    <p class="align-text-left image-info-text">Ocean waves diffracting through a gap in the harbour wall
+                    <p class="align-text-left image-info-text no-margin">Ocean waves diffracting through a gap in the
+                        harbour wall
                     </p>
                 </div>
             </section>
@@ -148,10 +145,12 @@
             <!-- <label for="waveSpeedSlider">Wave Speed</label>
             <input type="range" id="waveSpeedSlider" min="30" max="180" value="50"> -->
 
-            <h3 class="sub-subheader-text align-text-left">About this Simulation</h2>
+            <div class="text-content">
+
+                <h3 class="center-text">About this Simulation</h3>
 
                 <div class="text">
-                    <p class="align-text-left">
+                    <p>
                         Diffraction is greatest when the slit width is approximately equal to the wavelength. As the
                         slit becomes
                         even narrower, the wavefront continues to spread out, but the transmitted wave becomes much
@@ -162,96 +161,66 @@
                     </p>
                 </div>
 
-                <h3 class="sub-subheader-text align-text-left">Secondary Wavelets (Huygens' Principle)</h3>
+                <details class="info-details">
+                    <summary>What are the secondary wavelets?</summary>
+                    <div class="details-content">
+                        <p class="align-text-left text-content">Every point on a wavefront acts as a source of a new
+                            circular wavelet.
+                            The new wavefront is formed by
+                            the outer edge (envelope) of these secondary wavelets. When the wave passes through a slit,
+                            the
+                            wavelets spread out in all directions, producing the curved diffracted wavefront.</p>
+                    </div>
+                </details>
 
-                <div class="text">
-                    <p class="align-text-left">Every point on a wavefront acts as a source of a new circular wavelet.
-                        The new wavefront is formed by
-                        the outer edge (envelope) of these secondary wavelets. When the wave passes through a slit, the
-                        wavelets spread out in all directions, producing the curved diffracted wavefront.</p>
-                </div>
-
-                <div class="content-block add-margin">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Changing Wavelength</th>
-                                <th>Changing Slit Width</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Increasing the wavelength (slit width constant)
-                                    The wavelength becomes larger relative to the slit width.
-                                    Diffraction increases, causing the transmitted wave energy to spread over a wider
-                                    range
-                                    of
-                                    angles.
-                                    The total energy passing through the slit remains approximately the same, but it is
-                                    distributed over a
-                                    larger area.
-                                    In this simulation: The spacing between successive wavefronts increases, while the
-                                    overall
-                                    wavefront
-                                    shape changes very little because interference is not modelled.</td>
-
-                                <td>Increasing the slit width (wavelength constant)
-                                    The slit becomes larger relative to the wavelength.
-                                    Diffraction decreases, so more of the transmitted wave energy continues straight
-                                    ahead.
-                                    Because the opening is larger, more of the incident wave energy passes through the
-                                    slit.
-                                    In this simulation: The outgoing wavefront becomes flatter, approaching the shape of
-                                    the
-                                    original plane
-                                    wave.</td>
-                            </tr>
-
-                            <tr>
-                                <td>Decreasing the slit width (wavelength constant)
-                                    The slit becomes smaller relative to the wavelength.
-                                    Diffraction increases, causing the transmitted wave energy to spread over a wider
-                                    range
-                                    of
-                                    angles.
-                                    Because the opening is smaller, less of the incident wave energy passes through the
-                                    slit.
-                                    In this simulation: The outgoing wavefront becomes noticeably more curved,
-                                    demonstrating
-                                    Huygens'
-                                    Principle.</td>
-
-                                <td>Decreasing the wavelength (slit width constant)
-                                    The wavelength becomes smaller relative to the slit width.
-                                    Diffraction decreases, so more of the transmitted wave energy remains concentrated
-                                    in
-                                    the
-                                    forward
-                                    direction.
-                                    The total energy passing through the slit remains approximately the same.
-                                    In this simulation: The spacing between successive wavefronts decreases, while the
-                                    overall
-                                    wavefront
-                                    shape changes very little.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- Removed the table as the relationships it shows are not needed at NCEA Level 3 -->
 
                 <br>
 
-                <p class="align-text-left"><b>Simulation note:</b> This simulation only shows the geometric aspect of
+                <p class="notes"><b>Simulation note:</b> This simulation only shows the geometric aspect of
                     diffraction (where the
                     wavefronts can propagate) and not the intensity distribution (the amount of energy that reaches each
                     direction) as it does not take into account interference or intensity. Therefore, although changing
                     the
                     wavelength does not have a noticable change on the shape of the wavefront, it affects the energy
                     distributed in each direction and therefore still affects the strength of diffraction.</p>
+            </div>
         </section>
 
-        <section>
-            <h2 class="subheader-text align-text-left">Interference Diagram</h2>
+        <section class="title">
+            <h1 class="header-text center-text diffraction-page-titles">Interference</h1>
+        </section>
+
+        <section class="content">
+
+            <section class="two-column-layout">
+                <div class="text">
+                    <div class="text-inner">
+                        <h2 class="content-left">What is Interference?</h2>
+                        <p class="content-left">
+                            Interference occurs when two or more waves overlap. While the waves
+                            overlap, their individual displacements combine according to the
+                            <strong>principle of superposition</strong>. This means that the
+                            resultant displacement at any point is the sum of the displacements
+                            produced by the individual waves at that point. After overlapping,
+                            the waves continue travelling; they do not permanently change or
+                            destroy one another.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="image content-right">
+                    <img class="default-styled-image" src="assets/images/interference-double-slit-experiment.jpeg"
+                        alt="Ocean waves diffracting through a gap in the harbour wall">
+                    <p class="align-text-left image-info-text no-margin">Fringes produced by light interfering from two slits
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <section class="content">
+            <h2 class="subheader-text align-text-left">Two Point Interference</h2>
+
             <div class="content-block" id="diffractionDiagramMainContainer">
                 <div id="diffractionDiagramContainer">
                     <div class="diagramCanvas" id="interferenceDiagram"></div>
@@ -298,155 +267,205 @@
             <p class="align-text-left image-info-text">NOTE: This simulation simplifies the diffraction to a point
                 source to reduce lag and complexity while still preserving the correct relationships.</p>
 
-            <div class="diagramExplanation">
-                <h3 class="align-text-left">Understanding Two-Source Interference</h3>
-
-                <h4 class="align-text-left">What is interference?</h4>
-                <p class="align-text-left">
-                    Interference occurs when two or more waves overlap. While the waves overlap, their
-                    individual displacements combine according to the <strong>principle of superposition</strong>.
-                    This means that the resultant displacement at any point is the sum of the displacements
-                    produced by the individual waves at that point. After overlapping, the waves continue
-                    travelling; they do not permanently change or destroy one another.
+            <div class="text-content">
+                <h3 class="center-text">About this Simulation</h3>
+                <p>
+                    This simulation shows coherent waves diffracting through two slits. The diffracted waves from the
+                    two slits overlap and undergo constructive and destructive interference. The <strong>orange dotted
+                        lines</strong>
+                    represent nodal lines, where destructive interference occurs, while the <strong>blue lines</strong>
+                    represent
+                    antinodal lines, where constructive interference occurs.
                 </p>
 
-                <h4 class="align-text-left">Constructive and destructive interference</h4>
-                <p class="align-text-left">
-                    If two waves arrive <strong>in phase</strong>, their peaks meet peaks and their troughs meet
-                    troughs. Their displacements add to produce a wave with a larger amplitude. This is called
-                    <strong>constructive interference</strong>. Positions where constructive interference
-                    continually occurs form <strong>antinodal lines</strong>.
+                <p>The dark grey wavefronts represent peaks, while the light grey wavefronts
+                    represent troughs. Peak meeting peak or trough meeting trough produces constructive interference,
+                    while peak meeting trough produces destructive interference.
                 </p>
 
-                <p class="align-text-left">
-                    If two waves arrive <strong>out of phase</strong>, a peak from one wave meets a trough from
-                    the other. Their opposite displacements cancel, producing zero or minimum amplitude. This
-                    is called <strong>destructive interference</strong>. Positions where destructive
-                    interference continually occurs form <strong>nodal lines</strong>.
-                </p>
+                <p>The simulation demonstrates how changing the wavelength, \(\lambda\), affects
+                    the interference pattern. According to Young's equation, \(n\lambda=d\sin(\theta)\), changing
+                    \(\lambda\) changes the angle \(\theta\) of each non-central antinodal line. This would also change
+                    its displacement \(x\) from the central maximum on a screen through the right angled triangle
+                    relationship \(tan(θ)=\frac{x}{L}\).</p>
 
-                <h4 class="align-text-left">Why do lines of interference form?</h4>
-                <p class="align-text-left">
-                    The two sources in this diagram are coherent: they produce waves with the same frequency
-                    and a constant phase difference. A point in the diagram is usually a different distance
-                    from each source, so the two waves may travel different distances to reach it. This
-                    difference is called the <strong>path difference</strong>:
-                </p>
+                <p class="notes"><strong>Note:</strong> In this model, \(\theta\) cannot be greater than
+                    \(90^\circ\),
+                    because it is measured from the central axis in the forward direction. Also, since
+                    \(\sin(\theta)\leq1\), Young's equation \(n\lambda=d\sin(\theta)\) only produces a valid order when
+                    \(n\lambda\leq d\).</p>
 
-                <h5 class="equation">\[\text{path difference}=|r_2-r_1|\]</h5>
 
-                <p class="align-text-left">
-                    Here, \(r_1\) and \(r_2\) are the distances travelled from the two sources. Because the
-                    sources are in phase, a whole-wavelength path difference makes the waves arrive in phase:
-                </p>
+                <h3>Additional Information</h3>
 
-                <h5 class="equation">\[\text{constructive interference:}\quad |r_2-r_1|=n\lambda\]</h5>
+                <details class="info-details">
+                    <summary>Constructive and destructive interference</summary>
 
-                <p class="align-text-left">
-                    In this equation, \(\lambda\) is the wavelength and \(n=0,1,2,3,\ldots\) is the whole-number
-                    order. For example, a path difference of \(2\lambda\) means one wave has travelled two
-                    complete wavelengths farther than the other. The waves are therefore still in phase when
-                    they meet.
-                </p>
+                    <div class="details-content align-text-left text-content">
+                        <p>
+                            If two waves arrive <strong>in phase</strong>, their peaks meet peaks and their
+                            troughs meet troughs. Their displacements add to produce a wave with a larger
+                            amplitude. This is called <strong>constructive interference</strong>. Positions
+                            where constructive interference continually occurs form
+                            <strong>antinodal lines</strong>.
+                        </p>
 
-                <p class="align-text-left">
-                    An odd number of half-wavelengths makes the waves arrive in antiphase:
-                </p>
+                        <p>
+                            If two waves arrive <strong>out of phase</strong>, a peak from one wave meets a
+                            trough from the other. Their opposite displacements cancel, producing zero or
+                            minimum amplitude. This is called <strong>destructive interference</strong>.
+                            Positions where destructive interference continually occurs form
+                            <strong>nodal lines</strong>.
+                        </p>
+                    </div>
+                </details>
 
-                <h5 class="equation">
-                    \[\text{destructive interference:}\quad |r_2-r_1|=\left(n+\frac{1}{2}\right)\lambda\]
-                </h5>
+                <details class="info-details">
+                    <summary>Why do lines of interference form?</summary>
 
-                <p class="align-text-left">
-                    This produces path differences of \(0.5\lambda, 1.5\lambda, 2.5\lambda,\ldots\). Every point
-                    with the same required path difference belongs to the same nodal or antinodal line, which
-                    is why an interference pattern forms across the diagram rather than at only one point.
-                </p>
+                    <div class="details-content align-text-left text-content">
+                        <p>
+                            The two sources in this diagram are coherent: they produce waves with the same frequency
+                            and a constant phase difference. A point in the diagram is usually a different distance
+                            from each source, so the two waves may travel different distances to reach it. This
+                            difference is called the <strong>path difference</strong>:
+                        </p>
 
-                <h4 class="align-text-left">Young's interference equation</h4>
-                <p class="align-text-left">
-                    When the observation point is far from two sources separated by a distance \(d\), the path
-                    difference can be written as \(d\sin(\theta)\). Equating this geometric path difference to
-                    the constructive-interference condition gives Young's equation:
-                </p>
+                        <h5 class="equation">\[\text{path difference}=|r_2-r_1|\]</h5>
 
-                <h5 class="equation">\[n\lambda=d\sin(\theta)\]</h5>
+                        <p>
+                            Here, \(r_1\) and \(r_2\) are the distances travelled from the two sources. Because the
+                            sources are in phase, a whole-wavelength path difference makes the waves arrive in phase:
+                        </p>
 
-                <p class="align-text-left">In this equation:</p>
-                <ul class="align-text-left">
-                    <li>\(n\) is the order of the antinodal line: \(0,1,2,3,\ldots\);</li>
-                    <li>\(\lambda\) is the wavelength;</li>
-                    <li>\(d\) is the separation of the two sources; and</li>
-                    <li>\(\theta\) is the angle between the central axis and the chosen antinodal line.</li>
-                </ul>
+                        <h5 class="equation">\[\text{constructive interference:}\quad |r_2-r_1|=n\lambda\]</h5>
 
-                <p class="align-text-left">
-                    The central antinodal line has \(n=0\). Points on it are equally distant from both sources,
-                    so their path difference is zero. The first antinodal lines on either side have \(n=1\),
-                    the next pair have \(n=2\), and so on. Nodal directions can similarly be found using:
-                </p>
+                        <p>
+                            In this equation, \(\lambda\) is the wavelength and \(n=0,1,2,3,\ldots\) is the whole-number
+                            order. For example, a path difference of \(2\lambda\) means one wave has travelled two
+                            complete wavelengths farther than the other. The waves are therefore still in phase when
+                            they meet.
+                        </p>
 
-                <h5 class="equation">
-                    \[\left(n+\frac{1}{2}\right)\lambda=d\sin(\theta)\]
-                </h5>
+                        <p>
+                            An odd number of half-wavelengths makes the waves arrive in antiphase:
+                        </p>
 
-                <h4 class="align-text-left">How this relates to a screen</h4>
-                <p class="align-text-left">
-                    Young's equation determines the <strong>angle</strong> of each antinodal line. If a screen
-                    were placed a perpendicular distance \(L\) from the sources, right-triangle geometry would
-                    determine where that line reaches the screen:
-                </p>
+                        <h5 class="equation">
+                            \[\text{destructive interference:}\quad |r_2-r_1|=\left(n+\frac{1}{2}\right)\lambda\]
+                        </h5>
 
-                <h5 class="equation">\[\tan(\theta)=\frac{x}{L}\]</h5>
+                        <p>
+                            This produces path differences of \(0.5\lambda, 1.5\lambda, 2.5\lambda,\ldots\). Every point
+                            with the same required path difference belongs to the same nodal or antinodal line, which
+                            is why an interference pattern forms across the diagram rather than at only one point.
+                        </p>
+                    </div>
+                </details>
 
-                <p class="align-text-left">
-                    Here, \(x\) is the distance from the central maximum to the selected maximum on the screen.
-                    This equation is not itself Young's interference equation; it is a geometric equation used
-                    alongside it. For small angles, \(\sin(\theta)\approx\tan(\theta)\), so the two equations can
-                    be combined:
-                </p>
+                <details class="info-details">
+                    <summary>Young's interference equation</summary>
 
-                <h5 class="equation">\[x\approx\frac{n\lambda L}{d}\]</h5>
+                    <div class="details-content align-text-left text-content">
+                        <p>
+                            When the observation point is far from two sources separated by a distance \(d\), the path
+                            difference can be written as \(d\sin(\theta)\). Equating this geometric path difference to
+                            the constructive-interference condition gives Young's equation:
+                        </p>
 
-                <p class="align-text-left">
-                    Therefore, for a fixed order \(n\), source separation \(d\), and screen distance \(L\), the
-                    displacement \(x\) is approximately directly proportional to wavelength. The spacing
-                    between neighbouring bright fringes is consequently:
-                </p>
+                        <h5 class="equation">\[n\lambda=d\sin(\theta)\]</h5>
 
-                <h5 class="equation">\[\Delta x\approx\frac{\lambda L}{d}\]</h5>
+                        <p>In this equation:</p>
+                        <ul>
+                            <li>\(n\) is the order of the antinodal line: \(0,1,2,3,\ldots\);</li>
+                            <li>\(\lambda\) is the wavelength;</li>
+                            <li>\(d\) is the separation of the two sources; and</li>
+                            <li>\(\theta\) is the angle between the central axis and the chosen antinodal line.</li>
+                        </ul>
 
-                <h4 class="align-text-left">What the interactive diagram demonstrates</h4>
-                <p class="align-text-left">
-                    The semicircular wavefronts represent waves spreading from the two sources. The peak and
-                    trough controls allow the matching and cancellation of the waves to be observed. The
-                    overlaid antinodal lines join positions where the path difference is a whole number of
-                    wavelengths, while the nodal lines join positions where it is an odd number of half-
-                    wavelengths.
-                </p>
+                        <p>
+                            The central antinodal line has \(n=0\). Points on it are equally distant from both sources,
+                            so their path difference is zero. The first antinodal lines on either side have \(n=1\),
+                            the next pair have \(n=2\), and so on. Nodal directions can similarly be found using:
+                        </p>
 
-                <p class="align-text-left">
-                    Moving the wavelength slider changes \(\lambda\) while the source separation \(d\) remains
-                    constant. From \(n\lambda=d\sin(\theta)\), increasing the wavelength increases the angle
-                    \(\theta\) of each non-central order. The interference lines therefore spread farther apart
-                    and some may move beyond the visible diagram. If a screen were present, the maxima would
-                    appear farther from the centre and the fringe spacing would be greater. Decreasing the
-                    wavelength produces the opposite effect.
-                </p>
+                        <h5 class="equation">
+                            \[\left(n+\frac{1}{2}\right)\lambda=d\sin(\theta)\]
+                        </h5>
+                    </div>
+                </details>
 
-                <p class="align-text-left">
-                    At larger angles, wavelength and screen displacement still increase together, but they are
-                    not exactly directly proportional because \(\sin(\theta)\) and \(\tan(\theta)\) change at
-                    different rates. The direct-proportion equation for \(x\) is an approximation that is most
-                    accurate when the screen is far away and the angles are small.
-                </p>
+                <details class="info-details">
+                    <summary>How this relates to a screen</summary>
 
-                <p class="align-text-left">
-                    <strong>Simulation note:</strong> The diagram models each slit as a point source and does not
+                    <div class="details-content align-text-left text-content">
+                        <p>
+                            Young's equation determines the <strong>angle</strong> of each antinodal line. If a screen
+                            were placed a perpendicular distance \(L\) from the sources, right-triangle geometry would
+                            determine where that line reaches the screen:
+                        </p>
+
+                        <h5 class="equation">\[\tan(\theta)=\frac{x}{L}\]</h5>
+
+                        <p>
+                            Here, \(x\) is the distance from the central maximum to the selected maximum on the screen.
+                            This equation is not itself Young's interference equation; it is a geometric equation used
+                            alongside it. For small angles, \(\sin(\theta)\approx\tan(\theta)\), so the two equations
+                            can
+                            be combined:
+                        </p>
+
+                        <h5 class="equation">\[x\approx\frac{n\lambda L}{d}\]</h5>
+
+                        <p>
+                            Therefore, for a fixed order \(n\), source separation \(d\), and screen distance \(L\), the
+                            displacement \(x\) is approximately directly proportional to wavelength. The spacing
+                            between neighbouring bright fringes is consequently:
+                        </p>
+
+                        <h5 class="equation">\[\Delta x\approx\frac{\lambda L}{d}\]</h5>
+                    </div>
+                </details>
+
+                <details class="info-details">
+                    <summary>What the interactive diagram demonstrates</summary>
+
+                    <div class="details-content align-text-left text-content">
+                        <p>
+                            The semicircular wavefronts represent waves spreading from the two sources. The peak and
+                            trough controls allow the matching and cancellation of the waves to be observed. The
+                            overlaid antinodal lines join positions where the path difference is a whole number of
+                            wavelengths, while the nodal lines join positions where it is an odd number of half-
+                            wavelengths.
+                        </p>
+
+                        <p>
+                            Moving the wavelength slider changes \(\lambda\) while the source separation \(d\) remains
+                            constant. From \(n\lambda=d\sin(\theta)\), increasing the wavelength increases the angle
+                            \(\theta\) of each non-central order. The interference lines therefore spread farther apart
+                            and some may move beyond the visible diagram. If a screen were present, the maxima would
+                            appear farther from the centre and the fringe spacing would be greater. Decreasing the
+                            wavelength produces the opposite effect.
+                        </p>
+
+                        <p>
+                            At larger angles, wavelength and screen displacement still increase together, but they are
+                            not exactly directly proportional because \(\sin(\theta)\) and \(\tan(\theta)\) change at
+                            different rates. The direct-proportion equation for \(x\) is an approximation that is most
+                            accurate when the screen is far away and the angles are small.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- <p class="align-text-left">
+                    <strong>Simulation note:</strong> The diagram models each slit as a point source and does
+                    not
                     display a physical screen or the intensity of the fringes. It demonstrates the positions
                     and spacing of the nodal and antinodal lines rather than the brightness distribution of a
                     real two-slit experiment.
-                </p>
+                </p> -->
+
+                <br>
             </div>
 
         </section>
@@ -466,6 +485,7 @@
     <!-- References to the JS scripts -->
     <script type="module" src="js/diffraction.js"></script>
     <script type="module" src="js/interference.js"></script>
+    <script type="module" src="js/shared.js"></script>
 </body>
 
 </html>
