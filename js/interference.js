@@ -1,6 +1,6 @@
 // Wave settings, cannot be changed by user
 let speed = 100; // now constant
-let spawnTimer = 0; 
+let spawnTimer = 0;
 
 // Spacing, can be changed by user
 let spacing = 70;
@@ -192,13 +192,21 @@ function updateWaveVisibility() {
 showPeaksCheckbox.addEventListener("change", updateWaveVisibility);
 showTroughsCheckbox.addEventListener("change", updateWaveVisibility);
 
+const showAntinodalLinesCheckbox = document.getElementById("showAntinodalLines")
+const showNodalLinesCheckbox = document.getElementById("showNodalLines")
+
+
+showAntinodalLinesCheckbox.addEventListener("change", redrawInterferenceLines);
+
+showNodalLinesCheckbox.addEventListener("change", redrawInterferenceLines);
+
 // Decided not to do wave speed slider as NCEA level 3 assumes wave speed is constant to show the relationship between wavelength and frequency
 // waveSpeedSlider.addEventListener("input", () => {
 //    speed = Number(waveSpeedSlider.value);
 // });
 
 // Calculates and returns the coordinates along one nodal/anti-nodal line
-function getInterferenceLinePoints(pathDifference, side, slitX, centreY, slitSeparation, endX){
+function getInterferenceLinePoints(pathDifference, side, slitX, centreY, slitSeparation, endX) {
     const points = [];
 
     const c = slitSeparation / 2;
@@ -285,19 +293,29 @@ function redrawInterferenceLines() {
         patternLines.push(line);
     }
 
-    // Draws the central antinodal line, it's constant/doesn't change
-    drawLine(0, 1, false);
+    // Draw antinodal lines only when enabled
+    if (showAntinodalLinesCheckbox.checked) {
+        // Central antinodal line
+        drawLine(0, 1, false);
 
-    // Antinodal lines: path difference = n multiplied by the wavelength
-    for (let n = 1; n * spacing < separation; n++) {
-        drawLine(n * spacing, -1, false);
-        drawLine(n * spacing, 1, false);
+        // Other antinodal lines: path difference = nλ
+        for (let n = 1; n * spacing < separation; n++) {
+            drawLine(n * spacing, -1, false);
+            drawLine(n * spacing, 1, false);
+        }
     }
 
-    // Nodal lines: path difference = (n + 0.5) multiplied by the wavelength
-    for (let n = 0; (n + 0.5) * spacing < separation; n++) {
-        drawLine((n + 0.5) * spacing, -1, true);
-        drawLine((n + 0.5) * spacing, 1, true);
+    // Draw nodal lines only when enabled
+    if (showNodalLinesCheckbox.checked) {
+        // Nodal lines: path difference = (n + 0.5)λ
+        for (
+            let n = 0;
+            (n + 0.5) * spacing < separation;
+            n++
+        ) {
+            drawLine((n + 0.5) * spacing, -1, true);
+            drawLine((n + 0.5) * spacing, 1, true);
+        }
     }
 
     patternLayer.batchDraw();

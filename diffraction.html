@@ -85,16 +85,16 @@
 
         <section class="content">
             <h2 class="subheader-text align-text-left">Diffraction Through a Slit</h2>
-            <div class="content-block" id="diffractionDiagramMainContainer">
-                <div id="diffractionDiagramContainer">
-                    <div class="diagramCanvas" id="diffractionDiagram"></div>
+            <div class="content-block diagram-main-container">
+                <div class="diagram-container">
+                    <div class="diagram-canvas" id="diffractionDiagram"></div>
                 </div>
-                <div id="diffractionDiagramControlsContainer">
+                <div class="diagram-controls-container">
                     <div>
                         <h3>Simulation Controls</h3>
                         <div class="slider-container">
                             <div class="two-element-separator">
-                                <label class="mb-0" for="diffractionSlitWidthSlider">Slit Width</label>
+                                <label class="mb-0" for="diffractionSlitWidthSlider">Slit width</label>
                                 <div class="row-container">
                                     <input type="number" id="diffractionSlitWidthNumber"
                                         class="no-margin custom-numeric-input" min="1" max="200">
@@ -123,17 +123,17 @@
                         <h3>Display</h3>
                         <div class="list-container">
                             <div>
-                                <label class="mb-0" for="showWaveletsCheckbox">Show Secondary Wavelets:</label>
+                                <label class="mb-0" for="showWaveletsCheckbox">Show secondary wavelets:</label>
                                 <input class="form-check-input" type="checkbox" id="showWaveletsCheckbox">
                             </div>
 
                             <div>
-                                <label class="mb-0" for="showWavefrontCheckbox">Show Diffracted Wavefront:</label>
+                                <label class="mb-0" for="showWavefrontCheckbox">Show diffracted wavefront:</label>
                                 <input class="form-check-input" type="checkbox" id="showWavefrontCheckbox" checked>
                             </div>
 
                             <div>
-                                <label class="mb-0" for="pauseDiffractionSimulationCheckbox">Pause Simulation:</label>
+                                <label class="mb-0" for="pauseDiffractionSimulationCheckbox">Pause simulation:</label>
                                 <input class="form-check-input" type="checkbox" id="pauseDiffractionSimulationCheckbox">
                             </div>
                         </div>
@@ -212,7 +212,8 @@
                 <div class="image content-right">
                     <img class="default-styled-image" src="assets/images/interference-double-slit-experiment.jpeg"
                         alt="Ocean waves diffracting through a gap in the harbour wall">
-                    <p class="align-text-left image-info-text no-margin">Fringes produced by light interfering from two slits
+                    <p class="align-text-left image-info-text no-margin">Fringes produced by light interfering from two
+                        slits
                     </p>
                 </div>
             </section>
@@ -221,11 +222,11 @@
         <section class="content">
             <h2 class="subheader-text align-text-left">Two Point Interference</h2>
 
-            <div class="content-block" id="diffractionDiagramMainContainer">
-                <div id="diffractionDiagramContainer">
-                    <div class="diagramCanvas" id="interferenceDiagram"></div>
+            <div class="content-block diagram-main-container">
+                <div class="diagram-container">
+                    <div class="diagram-canvas" id="interferenceDiagram"></div>
                 </div>
-                <div id="diffractionDiagramControlsContainer">
+                <div class="diagram-controls-container">
                     <div>
                         <h3>Simulation Controls</h3>
                         <div class="slider-container">
@@ -246,17 +247,27 @@
                         <h3>Display</h3>
                         <div class="list-container">
                             <div>
-                                <label class="mb-0" for="showInterferencePeaks">Show Peaks:</label>
+                                <label class="mb-0" for="showInterferencePeaks">Show peaks:</label>
                                 <input class="form-check-input" type="checkbox" id="showInterferencePeaks" checked>
                             </div>
 
                             <div>
-                                <label class="mb-0" for="showInterferenceTroughs">Show Troughs:</label>
+                                <label class="mb-0" for="showInterferenceTroughs">Show troughs:</label>
                                 <input class="form-check-input" type="checkbox" id="showInterferenceTroughs" checked>
                             </div>
 
                             <div>
-                                <label class="mb-0" for="pauseInterferenceSimulationCheckbox">Pause Simulation:</label>
+                                <label class="mb-0" for="showAntinodalLines">Show antinodal lines:</label>
+                                <input class="form-check-input" type="checkbox" id="showAntinodalLines" checked>
+                            </div>
+
+                            <div>
+                                <label class="mb-0" for="showNodalLines">Show nodal lines:</label>
+                                <input class="form-check-input" type="checkbox" id="showNodalLines" checked>
+                            </div>
+
+                            <div>
+                                <label class="mb-0" for="pauseInterferenceSimulationCheckbox">Pause simulation:</label>
                                 <input class="form-check-input" type="checkbox"
                                     id="pauseInterferenceSimulationCheckbox">
                             </div>
@@ -294,170 +305,172 @@
                     because it is measured from the central axis in the forward direction. Also, since
                     \(\sin(\theta)\leq1\), Young's equation \(n\lambda=d\sin(\theta)\) only produces a valid order when
                     \(n\lambda\leq d\).</p>
+            </div>
+        </section>
 
+        <section class="content text-content">
+            <h3>Additional Information</h3>
 
-                <h3>Additional Information</h3>
+            <details class="info-details">
+                <summary>Constructive and destructive interference</summary>
 
-                <details class="info-details">
-                    <summary>Constructive and destructive interference</summary>
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        If two waves arrive <strong>in phase</strong>, their peaks meet peaks and their
+                        troughs meet troughs. Their displacements add to produce a wave with a larger
+                        amplitude. This is called <strong>constructive interference</strong>. Positions
+                        where constructive interference continually occurs form
+                        <strong>antinodal lines</strong>.
+                    </p>
 
-                    <div class="details-content align-text-left text-content">
-                        <p>
-                            If two waves arrive <strong>in phase</strong>, their peaks meet peaks and their
-                            troughs meet troughs. Their displacements add to produce a wave with a larger
-                            amplitude. This is called <strong>constructive interference</strong>. Positions
-                            where constructive interference continually occurs form
-                            <strong>antinodal lines</strong>.
-                        </p>
+                    <p>
+                        If two waves arrive <strong>out of phase</strong>, a peak from one wave meets a
+                        trough from the other. Their opposite displacements cancel, producing zero or
+                        minimum amplitude. This is called <strong>destructive interference</strong>.
+                        Positions where destructive interference continually occurs form
+                        <strong>nodal lines</strong>.
+                    </p>
+                </div>
+            </details>
 
-                        <p>
-                            If two waves arrive <strong>out of phase</strong>, a peak from one wave meets a
-                            trough from the other. Their opposite displacements cancel, producing zero or
-                            minimum amplitude. This is called <strong>destructive interference</strong>.
-                            Positions where destructive interference continually occurs form
-                            <strong>nodal lines</strong>.
-                        </p>
-                    </div>
-                </details>
+            <details class="info-details">
+                <summary>Why do lines of interference form?</summary>
 
-                <details class="info-details">
-                    <summary>Why do lines of interference form?</summary>
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        The two sources in this diagram are coherent: they produce waves with the same frequency
+                        and a constant phase difference. A point in the diagram is usually a different distance
+                        from each source, so the two waves may travel different distances to reach it. This
+                        difference is called the <strong>path difference</strong>:
+                    </p>
 
-                    <div class="details-content align-text-left text-content">
-                        <p>
-                            The two sources in this diagram are coherent: they produce waves with the same frequency
-                            and a constant phase difference. A point in the diagram is usually a different distance
-                            from each source, so the two waves may travel different distances to reach it. This
-                            difference is called the <strong>path difference</strong>:
-                        </p>
+                    <h5 class="equation">\[\text{path difference}=|r_2-r_1|\]</h5>
 
-                        <h5 class="equation">\[\text{path difference}=|r_2-r_1|\]</h5>
+                    <p>
+                        Here, \(r_1\) and \(r_2\) are the distances travelled from the two sources. Because the
+                        sources are in phase, a whole-wavelength path difference makes the waves arrive in phase:
+                    </p>
 
-                        <p>
-                            Here, \(r_1\) and \(r_2\) are the distances travelled from the two sources. Because the
-                            sources are in phase, a whole-wavelength path difference makes the waves arrive in phase:
-                        </p>
+                    <h5 class="equation">\[\text{constructive interference:}\quad |r_2-r_1|=n\lambda\]</h5>
 
-                        <h5 class="equation">\[\text{constructive interference:}\quad |r_2-r_1|=n\lambda\]</h5>
+                    <p>
+                        In this equation, \(\lambda\) is the wavelength and \(n=0,1,2,3,\ldots\) is the whole-number
+                        order. For example, a path difference of \(2\lambda\) means one wave has travelled two
+                        complete wavelengths farther than the other. The waves are therefore still in phase when
+                        they meet.
+                    </p>
 
-                        <p>
-                            In this equation, \(\lambda\) is the wavelength and \(n=0,1,2,3,\ldots\) is the whole-number
-                            order. For example, a path difference of \(2\lambda\) means one wave has travelled two
-                            complete wavelengths farther than the other. The waves are therefore still in phase when
-                            they meet.
-                        </p>
+                    <p>
+                        An odd number of half-wavelengths makes the waves arrive in antiphase:
+                    </p>
 
-                        <p>
-                            An odd number of half-wavelengths makes the waves arrive in antiphase:
-                        </p>
+                    <h5 class="equation">
+                        \[\text{destructive interference:}\quad |r_2-r_1|=\left(n+\frac{1}{2}\right)\lambda\]
+                    </h5>
 
-                        <h5 class="equation">
-                            \[\text{destructive interference:}\quad |r_2-r_1|=\left(n+\frac{1}{2}\right)\lambda\]
-                        </h5>
+                    <p>
+                        This produces path differences of \(0.5\lambda, 1.5\lambda, 2.5\lambda,\ldots\). Every point
+                        with the same required path difference belongs to the same nodal or antinodal line, which
+                        is why an interference pattern forms across the diagram rather than at only one point.
+                    </p>
+                </div>
+            </details>
 
-                        <p>
-                            This produces path differences of \(0.5\lambda, 1.5\lambda, 2.5\lambda,\ldots\). Every point
-                            with the same required path difference belongs to the same nodal or antinodal line, which
-                            is why an interference pattern forms across the diagram rather than at only one point.
-                        </p>
-                    </div>
-                </details>
+            <details class="info-details">
+                <summary>Young's interference equation</summary>
 
-                <details class="info-details">
-                    <summary>Young's interference equation</summary>
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        When the observation point is far from two sources separated by a distance \(d\), the path
+                        difference can be written as \(d\sin(\theta)\). Equating this geometric path difference to
+                        the constructive-interference condition gives Young's equation:
+                    </p>
 
-                    <div class="details-content align-text-left text-content">
-                        <p>
-                            When the observation point is far from two sources separated by a distance \(d\), the path
-                            difference can be written as \(d\sin(\theta)\). Equating this geometric path difference to
-                            the constructive-interference condition gives Young's equation:
-                        </p>
+                    <h5 class="equation">\[n\lambda=d\sin(\theta)\]</h5>
 
-                        <h5 class="equation">\[n\lambda=d\sin(\theta)\]</h5>
+                    <p>In this equation:</p>
+                    <ul>
+                        <li>\(n\) is the order of the antinodal line: \(0,1,2,3,\ldots\);</li>
+                        <li>\(\lambda\) is the wavelength;</li>
+                        <li>\(d\) is the separation of the two sources; and</li>
+                        <li>\(\theta\) is the angle between the central axis and the chosen antinodal line.</li>
+                    </ul>
 
-                        <p>In this equation:</p>
-                        <ul>
-                            <li>\(n\) is the order of the antinodal line: \(0,1,2,3,\ldots\);</li>
-                            <li>\(\lambda\) is the wavelength;</li>
-                            <li>\(d\) is the separation of the two sources; and</li>
-                            <li>\(\theta\) is the angle between the central axis and the chosen antinodal line.</li>
-                        </ul>
+                    <p>
+                        The central antinodal line has \(n=0\). Points on it are equally distant from both sources,
+                        so their path difference is zero. The first antinodal lines on either side have \(n=1\),
+                        the next pair have \(n=2\), and so on. Nodal directions can similarly be found using:
+                    </p>
 
-                        <p>
-                            The central antinodal line has \(n=0\). Points on it are equally distant from both sources,
-                            so their path difference is zero. The first antinodal lines on either side have \(n=1\),
-                            the next pair have \(n=2\), and so on. Nodal directions can similarly be found using:
-                        </p>
+                    <h5 class="equation">
+                        \[\left(n+\frac{1}{2}\right)\lambda=d\sin(\theta)\]
+                    </h5>
+                </div>
+            </details>
 
-                        <h5 class="equation">
-                            \[\left(n+\frac{1}{2}\right)\lambda=d\sin(\theta)\]
-                        </h5>
-                    </div>
-                </details>
+            <details class="info-details">
+                <summary>How this relates to a screen</summary>
 
-                <details class="info-details">
-                    <summary>How this relates to a screen</summary>
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        Young's equation determines the <strong>angle</strong> of each antinodal line. If a screen
+                        were placed a perpendicular distance \(L\) from the sources, right-triangle geometry would
+                        determine where that line reaches the screen:
+                    </p>
 
-                    <div class="details-content align-text-left text-content">
-                        <p>
-                            Young's equation determines the <strong>angle</strong> of each antinodal line. If a screen
-                            were placed a perpendicular distance \(L\) from the sources, right-triangle geometry would
-                            determine where that line reaches the screen:
-                        </p>
+                    <h5 class="equation">\[\tan(\theta)=\frac{x}{L}\]</h5>
 
-                        <h5 class="equation">\[\tan(\theta)=\frac{x}{L}\]</h5>
+                    <p>
+                        Here, \(x\) is the distance from the central maximum to the selected maximum on the screen.
+                        This equation is not itself Young's interference equation; it is a geometric equation used
+                        alongside it. For small angles, \(\sin(\theta)\approx\tan(\theta)\), so the two equations
+                        can
+                        be combined:
+                    </p>
 
-                        <p>
-                            Here, \(x\) is the distance from the central maximum to the selected maximum on the screen.
-                            This equation is not itself Young's interference equation; it is a geometric equation used
-                            alongside it. For small angles, \(\sin(\theta)\approx\tan(\theta)\), so the two equations
-                            can
-                            be combined:
-                        </p>
+                    <h5 class="equation">\[x\approx\frac{n\lambda L}{d}\]</h5>
 
-                        <h5 class="equation">\[x\approx\frac{n\lambda L}{d}\]</h5>
+                    <p>
+                        Therefore, for a fixed order \(n\), source separation \(d\), and screen distance \(L\), the
+                        displacement \(x\) is approximately directly proportional to wavelength. The spacing
+                        between neighbouring bright fringes is consequently:
+                    </p>
 
-                        <p>
-                            Therefore, for a fixed order \(n\), source separation \(d\), and screen distance \(L\), the
-                            displacement \(x\) is approximately directly proportional to wavelength. The spacing
-                            between neighbouring bright fringes is consequently:
-                        </p>
+                    <h5 class="equation">\[\Delta x\approx\frac{\lambda L}{d}\]</h5>
+                </div>
+            </details>
 
-                        <h5 class="equation">\[\Delta x\approx\frac{\lambda L}{d}\]</h5>
-                    </div>
-                </details>
+            <details class="info-details">
+                <summary>What the interactive diagram demonstrates</summary>
 
-                <details class="info-details">
-                    <summary>What the interactive diagram demonstrates</summary>
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        The semicircular wavefronts represent waves spreading from the two sources. The peak and
+                        trough controls allow the matching and cancellation of the waves to be observed. The
+                        overlaid antinodal lines join positions where the path difference is a whole number of
+                        wavelengths, while the nodal lines join positions where it is an odd number of half-
+                        wavelengths.
+                    </p>
 
-                    <div class="details-content align-text-left text-content">
-                        <p>
-                            The semicircular wavefronts represent waves spreading from the two sources. The peak and
-                            trough controls allow the matching and cancellation of the waves to be observed. The
-                            overlaid antinodal lines join positions where the path difference is a whole number of
-                            wavelengths, while the nodal lines join positions where it is an odd number of half-
-                            wavelengths.
-                        </p>
+                    <p>
+                        Moving the wavelength slider changes \(\lambda\) while the source separation \(d\) remains
+                        constant. From \(n\lambda=d\sin(\theta)\), increasing the wavelength increases the angle
+                        \(\theta\) of each non-central order. The interference lines therefore spread farther apart
+                        and some may move beyond the visible diagram. If a screen were present, the maxima would
+                        appear farther from the centre and the fringe spacing would be greater. Decreasing the
+                        wavelength produces the opposite effect.
+                    </p>
 
-                        <p>
-                            Moving the wavelength slider changes \(\lambda\) while the source separation \(d\) remains
-                            constant. From \(n\lambda=d\sin(\theta)\), increasing the wavelength increases the angle
-                            \(\theta\) of each non-central order. The interference lines therefore spread farther apart
-                            and some may move beyond the visible diagram. If a screen were present, the maxima would
-                            appear farther from the centre and the fringe spacing would be greater. Decreasing the
-                            wavelength produces the opposite effect.
-                        </p>
+                    <p>
+                        At larger angles, wavelength and screen displacement still increase together, but they are
+                        not exactly directly proportional because \(\sin(\theta)\) and \(\tan(\theta)\) change at
+                        different rates. The direct-proportion equation for \(x\) is an approximation that is most
+                        accurate when the screen is far away and the angles are small.
+                    </p>
+                </div>
+            </details>
 
-                        <p>
-                            At larger angles, wavelength and screen displacement still increase together, but they are
-                            not exactly directly proportional because \(\sin(\theta)\) and \(\tan(\theta)\) change at
-                            different rates. The direct-proportion equation for \(x\) is an approximation that is most
-                            accurate when the screen is far away and the angles are small.
-                        </p>
-                    </div>
-                </details>
-
-                <!-- <p class="align-text-left">
+            <!-- <p class="align-text-left">
                     <strong>Simulation note:</strong> The diagram models each slit as a point source and does
                     not
                     display a physical screen or the intensity of the fringes. It demonstrates the positions
@@ -465,9 +478,7 @@
                     real two-slit experiment.
                 </p> -->
 
-                <br>
-            </div>
-
+            <br>
         </section>
 
     </main>
