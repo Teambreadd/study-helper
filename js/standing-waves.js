@@ -8,6 +8,9 @@ const showIncidentWaveCheckbox = document.getElementById("showIncidentWaveCheckb
 const showReflectedWaveCheckbox = document.getElementById("showReflectedWaveCheckbox");
 const showResultantWaveCheckbox = document.getElementById("showResultantWaveCheckbox");
 
+const showNodalLinesCheckbox = document.getElementById("showStandingWavesNodalLinesCheckbox");
+const showAntiNodalLinesCheckbox = document.getElementById("showStandingWavesAntinodalLinesCheckbox");
+
 const pauseSimulationCheckbox = document.getElementById("pauseStandingWavesSimulationCheckbox");
 
 const selectBoundaryType = document.getElementById("standingWavesBoundaryType");
@@ -39,14 +42,13 @@ harmonicNumericInput.value = harmonicSlider.value
 
 // Update harmonic slider on input
 harmonicSlider.addEventListener("input", () => {
-
-    // Check if valid number, the slider default behaviour does the clamping
     const value = Number(harmonicSlider.value);
     if (!Number.isFinite(value) || value <= 0) return;
 
-    // Update variables
     harmonic = value;
     harmonicNumericInput.value = harmonicSlider.value;
+
+    redrawNodeAndAntinodeMarkers();
 });
 
 // Update harmonic numeric input on input
@@ -76,6 +78,8 @@ harmonicNumericInput.addEventListener("change", () => {
     harmonic = value;
     harmonicSlider.value = String(value);
     harmonicNumericInput.value = String(value);
+    harmonic = value;
+    redrawNodeAndAntinodeMarkers();
 });
 
 // Pipe centre line
@@ -136,9 +140,19 @@ const resultantWave = new Konva.Line({
     lineJoin: "round",
 });
 
+const nodeMarkerGroup = new Konva.Group({
+    listening: false,
+});
+
+const antinodeMarkerGroup = new Konva.Group({
+    listening: false,
+});
+
 // Add all objects to the layer
 layer.add(
     centreLine,
+    nodeMarkerGroup,
+    antinodeMarkerGroup,
     incidentWave,
     reflectedWave,
     resultantWave,
@@ -158,6 +172,118 @@ showReflectedWaveCheckbox.addEventListener("change", () => {
 showResultantWaveCheckbox.addEventListener("change", () => {
     resultantWave.visible(showResultantWaveCheckbox.checked);
 });
+
+showNodalLinesCheckbox.addEventListener("change", () => {
+    nodeMarkerGroup.visible(showNodalLinesCheckbox.checked);
+});
+
+showAntiNodalLinesCheckbox.addEventListener("change", () => {
+    antinodeMarkerGroup.visible(showAntiNodalLinesCheckbox.checked);
+});
+
+// Initial setup
+incidentWave.visible(showIncidentWaveCheckbox.checked);
+reflectedWave.visible(showReflectedWaveCheckbox.checked);
+resultantWave.visible(showResultantWaveCheckbox.checked);
+nodeMarkerGroup.visible(showNodalLinesCheckbox.checked);
+antinodeMarkerGroup.visible(showAntiNodalLinesCheckbox.checked);
+
+// Gets all the nodes and antinodes from the current standing wave
+function getNodeAndAntinodeRatios() {
+    const config = getWaveConfiguration();
+    const k = config.k;
+
+    const nodes = [];
+    const antinodes = [];
+
+    // The physics
+    if (config.wave === Math.sin) {
+        // sin(kx) = 0 at nodes
+        for (let m = 0; m * Math.PI <= k; m++) {
+            nodes.push((m * Math.PI) / k);
+        }
+
+        // |sin(kx)| = 1 at antinodes
+        for (let m = 0; Math.PI / 2 + m * Math.PI <= k; m++) {
+            antinodes.push((Math.PI / 2 + m * Math.PI) / k);
+        }
+    } else {
+        // cos(kx) = 0 at nodes
+        for (let m = 0; Math.PI / 2 + m * Math.PI <= k; m++) {
+            nodes.push((Math.PI / 2 + m * Math.PI) / k);
+        }
+
+        // |cos(kx)| = 1 at antinodes
+        for (let m = 0; m * Math.PI <= k; m++) {
+            antinodes.push((m * Math.PI) / k);
+        }
+    }
+
+    return { nodes, antinodes };
+}
+
+// Removes old node/antinode lines and draws new node/antinode lines in their updated positions
+function redrawNodeAndAntinodeMarkers() {
+    nodeMarkerGroup.destroyChildren();
+    antinodeMarkerGroup.destroyChildren();
+
+    const positions = getNodeAndAntinodeRatios();
+
+    const markerTop = centreY - amplitude * 2.2;
+    const markerBottom = centreY + amplitude * 2.2;
+
+    // Draw and label nodes
+    for (const xRatio of positions.nodes) {
+        const x = leftX + xRatio * pipeLength;
+
+        nodeMarkerGroup.add(
+            new Konva.Line({
+                points: [x, markerTop, x, markerBottom],
+                stroke: "#dc2626",
+                strokeWidth: 2,
+                dash: [5, 5],
+            }),
+
+            new Konva.Text({
+                x: x - 12,
+                y: markerTop - 24,
+                width: 24,
+                text: "N",
+                align: "center",
+                fontSize: 16,
+                fontStyle: "bold",
+                fill: "#dc2626",
+            })
+        );
+    }
+
+    // Draw and label antinodes
+    for (const xRatio of positions.antinodes) {
+        const x = leftX + xRatio * pipeLength;
+
+        antinodeMarkerGroup.add(
+            new Konva.Line({
+                points: [x, markerTop, x, markerBottom],
+                stroke: "#16a34a",
+                strokeWidth: 2,
+                dash: [5, 5],
+            }),
+
+            new Konva.Text({
+                x: x - 12,
+                y: markerTop - 24,
+                width: 24,
+                text: "A",
+                align: "center",
+                fontSize: 16,
+                fontStyle: "bold",
+                fill: "#16a34a",
+            })
+        );
+    }
+
+    layer.batchDraw();
+}
 
 // Toggles harmonic controls between fix-fixed/open-open which allows all harmonic numbers, and fixed-open which only allows odd numbers
 function updateHarmonicControls() {
@@ -228,19 +354,15 @@ function updateBoundaryDisplay() {
 
 // Initial update
 updateBoundaryDisplay();
+redrawNodeAndAntinodeMarkers();
 
-// Update currentBoundaryType and the display on select input
-selectBoundaryType.addEventListener("change", () => {
-    currentBoundaryType = selectBoundaryType.value;
-    updateBoundaryDisplay();
-});
-
-// Updates stored variable on user change
+// Updates the current boundary type and the display on select input
 selectBoundaryType.addEventListener("change", () => {
     currentBoundaryType = selectBoundaryType.value;
 
     updateHarmonicControls();
     updateBoundaryDisplay();
+    redrawNodeAndAntinodeMarkers();
 });
 
 // Draws the waves
