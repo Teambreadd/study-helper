@@ -346,3 +346,7 @@ input[type="number"] {
     border-radius: 0.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+
+.black-link {
+    color: #1C1C1C;
+}
