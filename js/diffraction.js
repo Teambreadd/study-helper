@@ -97,12 +97,12 @@ widthSlider.addEventListener("input", () => {
 widthNumber.addEventListener("input", () => {
     const value = Number(widthNumber.value);
     // no need to check whether user has input invalid number e.g., outside of the range -1000, 22183089023 as the brower automatically clamps within the min and max of the slider value.
-    widthSlider.value = widthNumber.value
+    widthSlider.value = widthNumber.value;
     updateSlitWidth()
 });
 
 // Visually clamps the value that the user input to between the range of the slider after they lose focus (deselect) the numeric input
-widthNumber.addEventListener("blur", () => {
+widthNumber.addEventListener("change", () => {
     let value = Number(widthNumber.value);
 
     if (Number.isNaN(value)) {
@@ -214,7 +214,7 @@ wavelengthNumber.addEventListener("input", () => {
 });
 
 // Visually clamps the value that the user input to between the range of the slider after they lose focus (deselect) the numeric input
-wavelengthNumber.addEventListener("blur", () => {
+wavelengthNumber.addEventListener("change", () => {
     let value = Number(wavelengthNumber.value);
 
     if (Number.isNaN(value)) {

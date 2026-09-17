@@ -145,18 +145,22 @@ wavelengthSlider.addEventListener("input", () => {
     redrawInterferenceLines();
 });
 
-wavelengthNumber.addEventListener("input", () => {
-    const value = wavelengthNumber.valueAsNumber;
-    if (!Number.isFinite(value) || value <= 0) return;
+wavelengthNumber.addEventListener("change", () => {
+    let value = wavelengthNumber.valueAsNumber;
+    // Reject inputs that are not numbers
+    if (Number.isNaN(value)) {
+        value = Number(wavelengthSlider.value);
+    }
 
-    // Let the range slider apply its min/max limits.
-    wavelengthSlider.value = String(value);
+    // Clamp to slider min and max boundaries
+    value = Math.max(
+        Number(wavelengthSlider.min),
+        Math.min(Number(wavelengthSlider.max), value)
+    );
 
-    const clampedValue = Number(wavelengthSlider.value);
-    if (!Number.isFinite(clampedValue) || clampedValue <= 0) return;
-
-    spacing = clampedValue;
-    wavelengthNumber.value = wavelengthSlider.value;
+    spacing = value;
+    wavelengthNumber.value = value;
+    wavelengthSlider.value = value;
 
     redrawInterferenceLines();
 });

@@ -88,54 +88,32 @@
             <h2 class="subheader-text align-text-left">Diagram</h2>
             <div class="content-block diagram-main-container">
                 <div class="diagram-container">
-                    <div class="diagram-canvas" id=""></div>
+                    <div class="diagram-canvas" id="doppler-effect-diagram"></div>
                 </div>
                 <div class="diagram-controls-container">
                     <div>
                         <h3>Simulation Controls</h3>
                         <div class="slider-container">
                             <div class="two-element-separator">
-                                <label class="mb-0" for="diffractionSlitWidthSlider">Slit Width</label>
+                                <label class="mb-0" for="dopplerEffectSpeedNumericInput">Velocity</label>
                                 <div class="row-container">
-                                    <input type="number" id="diffractionSlitWidthNumber"
-                                        class="no-margin custom-numeric-input" min="1" max="200">
-                                    <p class="no-margin">px</p>
+                                    <input type="number" id="dopplerEffectSpeedNumericInput"
+                                        class="no-margin custom-numeric-input" min="-150" max="150">
+                                    <p class="no-margin">px/s</p>
                                 </div>
                             </div>
-                            <input class="form-range" type="range" id="diffractionSlitWidthSlider" min="30" max="220"
-                                value="70">
-                        </div>
-
-                        <div class="slider-container">
-                            <div class="two-element-separator">
-                                <label class="mb-0" for="diffractionWavelengthSlider">Wavelength</label>
-                                <div class="row-container">
-                                    <input type="number" id="diffractionWavelengthNumber"
-                                        class="no-margin custom-numeric-input" min="1" max="200">
-                                    <p class="no-margin">px</p>
-                                </div>
-                            </div>
-                            <input class="form-range" type="range" id="diffractionWavelengthSlider" min="30" max="220"
-                                value="70">
+                            <input class="form-range" type="range" id="dopplerEffectSpeedSlider" min="-150" max="150"
+                                value="0">
                         </div>
                     </div>
 
                     <div>
                         <h3>Display</h3>
                         <div class="list-container">
-                            <div>
-                                <label class="mb-0" for="showWaveletsCheckbox">Show Secondary Wavelets:</label>
-                                <input class="form-check-input" type="checkbox" id="showWaveletsCheckbox">
-                            </div>
 
                             <div>
-                                <label class="mb-0" for="showWavefrontCheckbox">Show Diffracted Wavefront:</label>
-                                <input class="form-check-input" type="checkbox" id="showWavefrontCheckbox" checked>
-                            </div>
-
-                            <div>
-                                <label class="mb-0" for="pauseDiffractionSimulationCheckbox">Pause Simulation:</label>
-                                <input class="form-check-input" type="checkbox" id="pauseDiffractionSimulationCheckbox">
+                                <label class="mb-0" for="pauseDopplerEffectSimulationCheckbox">Pause Simulation:</label>
+                                <input class="form-check-input" type="checkbox" id="pauseDopplerEffectSimulationCheckbox">
                             </div>
                         </div>
                     </div>
@@ -200,6 +178,7 @@
     <script src="https://unpkg.com/konva@9/konva.min.js"></script>
 
     <!-- References to the JS scripts -->
+     <script type="module" src="js/doppler-effect.js"></script>
     <script type="module" src="js/shared.js"></script>
 </body>
 
