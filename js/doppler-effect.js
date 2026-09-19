@@ -75,6 +75,47 @@ const source = new Konva.Rect({
 
 sourceLayer.add(source);
 
+// Creates a labelled stationary observer
+function createObserver(name, x, y) {
+    const dot = new Konva.Circle({
+        x: x,
+        y: y,
+        radius: 7,
+        fill: "#626262",
+        stroke: "#323232",
+        strokeWidth: 2,
+    });
+
+    const label = new Konva.Text({
+        x: x + 12,
+        y: y - 9,
+        text: name,
+        fontSize: 16,
+        fontFamily: "Arial",
+        fill: "#222222",
+    });
+
+    sourceLayer.add(dot);
+    sourceLayer.add(label);
+}
+
+// A is behind the source, B is above its path, C is ahead
+createObserver("Observer A", 125, stage.height() / 2);
+createObserver("Observer B", stage.width() / 2, 55);
+createObserver("Observer C", stage.width() - 125, stage.height() / 2);
+
+// Arrow showing the source's current velocity
+const velocityArrow = new Konva.Arrow({
+    points: [0, 0, 0, 0],
+    stroke: "#d35400",
+    fill: "#d35400",
+    strokeWidth: 4,
+    pointerLength: 10,
+    pointerWidth: 10,
+});
+
+sourceLayer.add(velocityArrow);
+
 const wavefronts = [];
 const emissionInterval = 1 / emissionFrequency;
 
@@ -96,6 +137,33 @@ function emitWavefront() {
     wavefronts.push(circle);
 }
 
+function updateVelocityArrow() {
+    const maximumArrowLength = 100;
+    const maximumSpeed = Math.max(
+        Math.abs(Number(speedSlider.min)),
+        Math.abs(Number(speedSlider.max))
+    );
+
+    // The length of the arrow increases with its speed
+    const arrowLength =
+        maximumSpeed === 0
+            ? 0
+            : (Math.abs(sourceSpeed) / maximumSpeed) * maximumArrowLength;
+
+    const startX = source.x();
+    const arrowY = source.y();
+
+    velocityArrow.points([
+        startX,
+        arrowY,
+        startX + Math.sign(sourceSpeed) * arrowLength,
+        arrowY,
+    ]);
+
+    // Hides the arrow when the source is stationary
+    velocityArrow.visible(sourceSpeed !== 0);
+}
+
 function update(dt) {
     // Move the source horizontally
     source.x(source.x() + sourceSpeed * dt);
@@ -111,6 +179,8 @@ function update(dt) {
         source.x(maximumX);
         sourceSpeed = 0;
     }
+
+    updateVelocityArrow();
 
     emissionTimer += dt;
 

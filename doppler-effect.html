@@ -67,10 +67,10 @@
                         <h2 class="content-left">What is the Doppler effect?</h2>
                         <p class="content-left">
                             The Doppler effect occurs when there is relative motion between a wave source and an
-                            observer, causing the observed frequency and wavelength to change. When the source moves
-                            towards the observer, the wavefronts are compressed, so the wavelength decreases and the
-                            observed frequency increases. When the source moves away, the wavefronts are spread out, so
-                            the wavelength increases and the observed frequency decreases.
+                            observer, causing the observed frequency to change. When the source moves towards the
+                            observer, the wavefronts are compressed, so the wavelength decreases and the observed
+                            frequency increases. When the source moves away, the wavefronts are spread out, so the
+                            wavelength increases and the observed frequency decreases.
                         </p>
                     </div>
                 </div>
@@ -113,7 +113,8 @@
 
                             <div>
                                 <label class="mb-0" for="pauseDopplerEffectSimulationCheckbox">Pause Simulation:</label>
-                                <input class="form-check-input" type="checkbox" id="pauseDopplerEffectSimulationCheckbox">
+                                <input class="form-check-input" type="checkbox"
+                                    id="pauseDopplerEffectSimulationCheckbox">
                             </div>
                         </div>
                     </div>
@@ -126,23 +127,50 @@
 
                 <div class="text">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sequi laudantium minima, odio quod
-                        nam, corporis aperiam dolore molestias non officia amet molestiae ullam distinctio temporibus
-                        asperiores hic eaque aliquam.
-                        Eveniet harum dolorum quos at! Quo dolor sunt nulla blanditiis voluptatibus, quia hic reiciendis
-                        consequatur iusto, accusantium libero rem nihil ipsam vero, tenetur temporibus odit nobis.
-                        Nesciunt ipsam officia doloribus?
+                        This diagram shows a source moving horizontally while <strong>Observers A</strong>,
+                        <strong>B</strong>, and <strong>C</strong> remain stationary.
+                        The <strong>orange arrow</strong> shows the source's direction and relative velocity: a longer
+                        arrow represents
+                        a greater speed, while no arrow is shown when the source is stationary.
+                    </p>
+
+                    <p>
+                        <strong>When the source moves to the right,</strong> Observer C is in front of the source and
+                        receives
+                        compressed wavefronts. Observer C therefore detects a higher apparent frequency. Observer A
+                        is behind the source and receives more widely spaced wavefronts, so detects a lower apparent
+                        frequency. The greater the source's velocity, the greater these changes are.
+                    </p>
+
+                    <p>
+                        <strong>When the source moves to the left,</strong> the situation reverses. Observer A is then
+                        in front of the
+                        source and detects a higher apparent frequency, while Observer C is behind the source and
+                        detects a lower apparent frequency.
+                    </p>
+
+                    <p>
+                        Observer B is above the source's path. As the source approaches B, B detects a higher apparent
+                        frequency. At the instant that the source is directly below B, its motion is perpendicular to
+                        the line between the source and B, so there is no Doppler shift in this simplified model. As
+                        the source moves away from B, B detects a lower apparent frequency. This shows that the
+                        Doppler effect depends on whether the source is moving towards or away from each observer.
+                    </p>
+
+                    <p>
+                        When the velocity is set to zero, the source is stationary. All three observers receive evenly
+                        spaced wavefronts and detect the emitted frequency.
                     </p>
                 </div>
 
-                <br>
+                <p class="notes">
+                    <b>Simulation note:</b> This is a simplified two-dimensional model. The wavefronts are shown as
+                    ideal circular waves emitted at a constant rate and travelling at a constant speed. The velocity
+                    values are measured in pixels per second for visualisation rather than representing real-world
+                    sound speeds. The simulation shows wavefront spacing only; it does not play sound or calculate an
+                    observer's exact observed frequency.
+                </p>
 
-                <p class="notes"><b>Simulation note:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Perspiciatis temporibus fugit totam, molestiae ad pariatur laborum sed consectetur similique odit,
-                    iste numquam maxime sint sunt tempore explicabo ratione deleniti exercitationem!
-                    Tempore nam quaerat voluptate quam, atque commodi nemo perferendis esse temporibus velit cupiditate
-                    error eum. Reprehenderit eos mollitia consequatur porro voluptatum amet eligendi, nemo perferendis
-                    iure, itaque molestias error necessitatibus?</p>
             </div>
         </section>
 
@@ -150,16 +178,81 @@
             <h3>Additional Information</h3>
 
             <details class="info-details">
-                <summary>Summary of something</summary>
+                <summary>How do you calculate the observed frequency?</summary>
 
                 <div class="details-content align-text-left text-content">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid aperiam possimus
-                        quae porro enim quidem accusantium voluptatem ea, odio laboriosam autem corporis molestias
-                        explicabo sequi quam assumenda expedita. Aut.
-                        Eligendi laboriosam aliquam molestiae quae illum officia corporis ducimus doloremque cupiditate
-                        fugit odit doloribus, dolores, mollitia veritatis corrupti assumenda quis quod perferendis
-                        possimus earum, tenetur dolor. Voluptatem rerum assumenda id.
+                        For a <strong>moving source</strong> and a <strong>stationary observer</strong>, the
+                        observed frequency can be calculated using:
+                    </p>
+
+                    <p class="center-text">
+                        \[
+                        f' = f\left(\frac{v_w}{v_w \pm v_s}\right)
+                        \]
+                    </p>
+
+                    <p>
+                        Here, \(f'\) is the observed (apparent) frequency, \(f\) is the frequency emitted by
+                        the source, \(v_w\) is the wave velocity, and \(v_s\) is the source velocity.
+                    </p>
+
+                    <p>
+                        Use \(v_w - v_s\) in the denominator when the source moves <strong>towards</strong>
+                        the observer. This gives \(f' > f\), so a higher frequency is detected. Use
+                        \(v_w + v_s\) when the source moves <strong>away from</strong> the observer. This
+                        gives \(f' < f\), so a lower frequency is detected. </p>
+
+                            <p class="notes">
+                                <b>Formula note:</b> This version of the formula applies to a moving source and a
+                                stationary observer. All velocities must use the same units.
+                            </p>
+                </div>
+            </details>
+
+            <details class="info-details">
+                <summary>Are the frequency of the emitted waves actually changing?</summary>
+
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        The source emits waves at a constant frequency. However, because the source moves relative to
+                        the observer, the wavefronts are compressed in front of it and spread out behind it. This causes
+                        an <strong>apparent</strong> change in the frequency detected by the observer.
+                    </p>
+                </div>
+            </details>
+
+            <details class="info-details">
+                <summary>Does the speed of the wave change?</summary>
+
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        No. The speed of the wave remains constant while it travels through the same medium. For
+                        example,
+                        sound travels at approximately the same speed through still air regardless of whether the source
+                        is moving towards or away from an observer.
+                    </p>
+
+                    <p>
+                        The Doppler effect changes the spacing of the wavefronts and therefore the frequency detected by
+                        an observer. It does not change the wave speed in the medium.
+                    </p>
+                </div>
+            </details>
+
+            <details class="info-details">
+                <summary>Why does a greater source velocity cause a greater Doppler effect?</summary>
+
+                <div class="details-content align-text-left text-content">
+                    <p>
+                        The source emits wavefronts at regular time intervals. At a greater velocity, it travels a
+                        greater distance between each emission. This makes the wavefronts more compressed in front of
+                        the source and more spread out behind it.
+                    </p>
+
+                    <p>
+                        As a result, an observer in front detects a greater increase in frequency, while an observer
+                        behind detects a greater decrease in frequency.
                     </p>
                 </div>
             </details>
@@ -178,7 +271,7 @@
     <script src="https://unpkg.com/konva@9/konva.min.js"></script>
 
     <!-- References to the JS scripts -->
-     <script type="module" src="js/doppler-effect.js"></script>
+    <script type="module" src="js/doppler-effect.js"></script>
     <script type="module" src="js/shared.js"></script>
 </body>
 
