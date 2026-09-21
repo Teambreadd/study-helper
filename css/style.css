@@ -29,7 +29,7 @@ a {
     margin-top: 0.95rem;
 }
 
-.diffraction-page-titles {
+.page-titles {
     margin-top: 1.2rem;
 }
 
@@ -94,6 +94,11 @@ a {
     padding-bottom: 2.5rem;
     padding-top: 1rem;
     margin-top: 0.4rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #383838; /* Choose your colour */
 }
 
 .swiper-slide {
@@ -347,6 +352,22 @@ input[type="number"] {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+.question-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
 .black-link {
     color: #1C1C1C;
+}
+
+.info-details summary.title-summary {
+    font-size: 1.5rem;
+}
+
+.info-details summary.sub-title-summary {
+    font-size: 1.3rem;
+    padding-top: 1rem;
 }

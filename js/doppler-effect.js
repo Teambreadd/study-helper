@@ -25,11 +25,42 @@ function setSourceSpeed(newSpeed) {
     }
 }
 
+function updateVelocityArrow() {
+    const maximumArrowLength = 100;
+    const maximumSpeed = Math.max(
+        Math.abs(Number(speedSlider.min)),
+        Math.abs(Number(speedSlider.max))
+    );
+
+    // The length of the arrow increases with its speed
+    const arrowLength =
+        maximumSpeed === 0
+            ? 0
+            : (Math.abs(sourceSpeed) / maximumSpeed) * maximumArrowLength;
+
+    const startX = source.x();
+    const arrowY = source.y();
+
+    velocityArrow.points([
+        startX,
+        arrowY,
+        startX + Math.sign(sourceSpeed) * arrowLength,
+        arrowY,
+    ]);
+
+    // Hides the arrow when the source is stationary
+    velocityArrow.visible(sourceSpeed !== 0);
+}
+
+
 // Hook up event listeners
 speedSlider.addEventListener("input", () => {
     speedNumericInput.value = speedSlider.value;
 
     setSourceSpeed(Number(speedSlider.value));
+
+    // Ensures that the arrow also updates on simulation pause
+    updateVelocityArrow();
 });
 
 // Makes changing the slit width via the numeric input update the slider
@@ -135,33 +166,6 @@ function emitWavefront() {
 
     waveLayer.add(circle);
     wavefronts.push(circle);
-}
-
-function updateVelocityArrow() {
-    const maximumArrowLength = 100;
-    const maximumSpeed = Math.max(
-        Math.abs(Number(speedSlider.min)),
-        Math.abs(Number(speedSlider.max))
-    );
-
-    // The length of the arrow increases with its speed
-    const arrowLength =
-        maximumSpeed === 0
-            ? 0
-            : (Math.abs(sourceSpeed) / maximumSpeed) * maximumArrowLength;
-
-    const startX = source.x();
-    const arrowY = source.y();
-
-    velocityArrow.points([
-        startX,
-        arrowY,
-        startX + Math.sign(sourceSpeed) * arrowLength,
-        arrowY,
-    ]);
-
-    // Hides the arrow when the source is stationary
-    velocityArrow.visible(sourceSpeed !== 0);
 }
 
 function update(dt) {
