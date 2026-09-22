@@ -18,10 +18,6 @@ a {
     font-size: 1.1rem;
 }
 
-.no-margin {
-    margin: 0;
-}
-
 .notes {
     color: #555555;
     font-size: 0.9rem;
@@ -240,6 +236,14 @@ a {
     justify-content: space-between;
 }
 
+.custom-numeric-input {
+    width: 4ch;
+    background-color: #C6C6C6;
+    text-align: right;
+    border: 0.1rem solid #8E8E8E;
+    border-radius: 0.25rem;
+}
+
 /* Bootstrap overrides */
 .form-range::-webkit-slider-thumb {
     background: #1f8fff;
@@ -270,14 +274,6 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Hides it for firefox */
 input[type="number"] {
     appearance: textfield;
-}
-
-.custom-numeric-input {
-    width: 4ch;
-    background-color: #C6C6C6;
-    text-align: right;
-    border: 0.1rem solid #8E8E8E;
-    border-radius: 0.25rem;
 }
 
 /* Swiper carousel */
@@ -362,4 +358,11 @@ input[type="number"] {
 #mainPageTitle {
     margin-bottom: 0.25rem;
     margin-top: 0.95rem;
+}
+
+/* Order specific styles */
+
+/* This class is deliberately at the bottom of the stylesheet so it overrides any other margin style at the same/lower priority */
+.no-margin {
+    margin: 0; 
 }

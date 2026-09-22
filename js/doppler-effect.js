@@ -63,7 +63,6 @@ speedSlider.addEventListener("input", () => {
     updateVelocityArrow();
 });
 
-// Makes changing the slit width via the numeric input update the slider
 speedNumericInput.addEventListener("change", () => {
     let value = Number(speedNumericInput.value);
 
