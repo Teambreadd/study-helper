@@ -72,6 +72,7 @@ objectLayer.add(barrierBottom);
 
 // objectLayer.add(circle);
 
+// Function that updates the slit width
 function updateSlitWidth() {
     const gap = Number(widthSlider.value);
 

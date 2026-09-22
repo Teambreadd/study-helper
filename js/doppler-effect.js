@@ -25,6 +25,7 @@ function setSourceSpeed(newSpeed) {
     }
 }
 
+// updates the velocity arrow (e.g., its length, direction and visibility)
 function updateVelocityArrow() {
     const maximumArrowLength = 100;
     const maximumSpeed = Math.max(
@@ -63,6 +64,7 @@ speedSlider.addEventListener("input", () => {
     updateVelocityArrow();
 });
 
+// Hooks up the speed numeric input. Links changes to the speed numeric input to the speed slider
 speedNumericInput.addEventListener("change", () => {
     let value = Number(speedNumericInput.value);
 
@@ -152,6 +154,7 @@ const emissionInterval = 1 / emissionFrequency;
 // Emit the first wave immediately
 let emissionTimer = emissionInterval; 
 
+// Emits a wave front from the source
 function emitWavefront() {
     // Each wave stays centred on the position where it was emitted
     const circle = new Konva.Circle({
@@ -167,6 +170,7 @@ function emitWavefront() {
     wavefronts.push(circle);
 }
 
+// The function that runs every frame in the animate loop
 function update(dt) {
     // Move the source horizontally
     source.x(source.x() + sourceSpeed * dt);
@@ -213,4 +217,5 @@ const animation = new Konva.Animation((frame) => {
     update(dt);
 }, [waveLayer, sourceLayer]);
 
+// Starts the animation
 animation.start();

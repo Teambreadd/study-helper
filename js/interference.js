@@ -145,6 +145,7 @@ wavelengthSlider.addEventListener("input", () => {
     redrawInterferenceLines();
 });
 
+// Hooks up the wavelength numeric input to user input and syncs it with the wavelength slider
 wavelengthNumber.addEventListener("change", () => {
     let value = wavelengthNumber.valueAsNumber;
     // Reject inputs that are not numbers

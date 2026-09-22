@@ -1,3 +1,4 @@
+// Sets up/configures the swiper carousel object
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1.5,
     spaceBetween: 30,
