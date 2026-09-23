@@ -25,7 +25,7 @@ function setSourceSpeed(newSpeed) {
     }
 }
 
-// updates the velocity arrow (e.g., its length, direction and visibility)
+// updates the velocity arrow (e.g., its length, direction, position and visibility)
 function updateVelocityArrow() {
     const maximumArrowLength = 100;
     const maximumSpeed = Math.max(
@@ -83,6 +83,8 @@ speedNumericInput.addEventListener("change", () => {
     speedNumericInput.value = value;
 
     setSourceSpeed(value);
+
+    updateVelocityArrow();
 });
 
 speedNumericInput.value = speedSlider.value;
